@@ -149,6 +149,21 @@
             position: relative;
         }
 
+        .avatar-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #2D3748;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border: 5px solid white;
+        }
+
         .avatar-image {
             width: 100%;
             height: 100%;
@@ -181,12 +196,13 @@
         }
 
         .hero-education {
-            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-size: clamp(1rem, 2vw, 1.125rem);
             color: var(--text-secondary);
             margin-bottom: 3rem;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.7;
         }
 
         .hero-education strong {
@@ -336,6 +352,65 @@
         }
 
         /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 4rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            background: var(--text-primary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .about-text {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--text-primary);
+        }
+
+        .about-text p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
         .about-content {
             max-width: 900px;
             margin: 0 auto;
@@ -804,6 +879,10 @@
                 height: 120px;
             }
 
+            .avatar-circle {
+                font-size: 2.5rem;
+            }
+
             .hero-icons {
                 gap: 1rem;
             }
@@ -811,6 +890,20 @@
             .icon-link {
                 width: 50px;
                 height: 50px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image-wrapper {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .about-text {
+                padding: 2rem;
             }
 
             .section-header {
@@ -885,12 +978,12 @@
     <section id="home" class="hero">
         <div class="hero-content-centered">
             <div class="hero-avatar">
-                <img src="amit1.jpeg" alt="Amit Yadav" class="avatar-image">
+                <div class="avatar-circle">AY</div>
             </div>
             <h1 class="hero-name">Amit Yadav</h1>
             <p class="hero-role">I'm a <span class="highlight">Aspiring Data Analyst</span> | <span class="highlight">AI Enthusiast</span></p>
             <p class="hero-education">
-                Data Science & AI student at <strong>Ramniranjan Jhunjhunwala College</strong>
+                Data Science & AI student at <strong>Ramniranjan Jhunjhunwala College</strong> | Passionate about uncovering insights and building intelligent solutions that make a difference
             </p>
             <div class="hero-icons">
                 <a href="https://github.com/mr-amit-yadav" target="_blank" class="icon-link" aria-label="GitHub">
@@ -912,38 +1005,45 @@
                     </svg>
                 </a>
             </div>
-            <div class="scroll-indicator">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section section-bg">
         <div class="section-header">
-            <p class="section-label">Get to Know Me</p>
-            <h2 class="section-title">About Me</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <h2 class="section-title" style="display: inline-block;">About Me</h2>
         </div>
-        <div class="about-content">
-            <p>
-                I'm a dedicated Data Science & Artificial Intelligence undergraduate at Ramniranjan Jhunjhunwala College, 
-                passionate about transforming raw data into actionable insights and intelligent solutions.
-            </p>
-            <p>
-                My journey in data science is driven by curiosity and a genuine interest in real-world problem solving. 
-                I specialize in data analysis, visualization, and machine learning, with hands-on experience in building 
-                AI-powered applications and analytics dashboards. From computer vision projects to business intelligence 
-                solutions, I thrive on challenges that allow me to apply statistical analysis and modern AI techniques.
-            </p>
-            <p>
-                I believe in continuous learning and staying updated with the latest developments in data science, machine 
-                learning, and AI. Whether it's developing predictive models, creating insightful visualizations, or building 
-                intelligent systems, I'm committed to delivering data-driven solutions that make a meaningful impact.
-            </p>
-            <div class="location">
-                📍 Based in Mumbai, India
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="amit1.jpeg" alt="Amit Yadav" class="about-image">
+                <div class="about-badges">
+                    <span class="badge">Data Analyst</span>
+                    <span class="badge">AI Enthusiast</span>
+                    <span class="badge">Problem Solver</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>
+                    Welcome to my digital universe! I'm a <strong>Data Science & Artificial Intelligence undergraduate</strong> at 
+                    <strong>Ramniranjan Jhunjhunwala College</strong>, where I transform complex problems into elegant, intelligent 
+                    solutions through cutting-edge technology.
+                </p>
+                <p>
+                    Currently pursuing my degree in <strong>Data Science and AI</strong> from <strong>University of Mumbai</strong>. 
+                    My expertise spans across <strong>Data Analysis, Visualization, and Applied AI</strong>.
+                </p>
+                <p>
+                    With hands-on experience in <strong>Machine Learning, Computer Vision, and Business Intelligence</strong>, 
+                    I've built innovative projects including AI-powered applications, data analysis tools, and intelligent systems. 
+                    I'm passionate about leveraging technology to create meaningful impact and solve real-world challenges.
+                </p>
+                <div class="location" style="margin-top: 2rem;">
+                    📍 Based in Mumbai, India
+                </div>
             </div>
         </div>
     </section>
