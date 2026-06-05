@@ -114,7 +114,7 @@
 
     .rev{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease;}
     .rev.up{opacity:1;transform:translateY(0);}
-    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
     .ag{display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:start;max-width:1100px;margin:3rem auto 0;}
     .aiw{position:relative;}
@@ -142,7 +142,6 @@
     .cts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
     .ct{padding:.3rem .75rem;background:rgba(0,0,0,.04);border:1px solid var(--border);border-radius:6px;font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
 
-    /* ── FIXED EXPERIENCE / TIMELINE ── */
     .tl{max-width:900px;margin:3rem auto 0;position:relative;}
     .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--accent),transparent);opacity:.3;}
     .ei{position:relative;padding:2.25rem 2.25rem 2.25rem 3.5rem;margin-bottom:1.75rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);transition:all .3s ease;}
@@ -155,7 +154,6 @@
     .eli li{color:var(--muted);font-size:.95rem;padding-left:1.5rem;margin-bottom:.8rem;position:relative;line-height:1.6;}
     .eli li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.8rem;}
 
-    /* ── VOLUNTEERING ── */
     .vol-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .75rem;background:rgba(217,119,6,.08);border:1px solid rgba(217,119,6,.25);border-radius:20px;font-size:.75rem;font-weight:700;color:var(--accent3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.75rem;}
 
     .skgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:3rem auto 0;}
@@ -166,26 +164,72 @@
     .skt{padding:.35rem .85rem;background:rgba(0,0,0,.04);border:1px solid var(--border);border-radius:6px;font-size:.8rem;color:var(--muted);font-weight:500;transition:all .2s ease;}
     .skt:hover{background:rgba(0,153,187,.08);border-color:var(--accent);color:var(--accent);transform:scale(1.05);}
 
-    .fb{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.5rem;}
-    .fbn{padding:.45rem 1.1rem;border-radius:20px;border:1px solid var(--border);background:transparent;font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);transition:all .25s ease;}
-    .fbn:hover,.fbn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,153,187,.07);}
-    .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.75rem;}
-    .pc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:all .3s ease;position:relative;}
-    .pc::after{content:'';position:absolute;inset:0;border-radius:var(--r);background:linear-gradient(135deg,rgba(0,153,187,.04),rgba(91,33,182,.04));opacity:0;transition:opacity .3s;pointer-events:none;}
-    .pc:hover{border-color:var(--border-hi);box-shadow:var(--glow);}
-    .pc:hover::after{opacity:1;}
-    .pc.hidden{display:none;}
-    .pt{padding:1.75rem;background:rgba(0,0,0,.03);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem;}
-    .pe{font-size:2rem;line-height:1;}
-    .pn{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--muted);margin-left:auto;}
-    .pb{padding:2.5em;flex:1;display:flex;flex-direction:column;}
-    .pc h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-style:normal;color:var(--text);margin-bottom:.75rem;}
-    .pc p{font-size:.9rem;color:var(--muted);line-height:1.75;flex:1;margin-bottom:1.25rem;}
-    .tps{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;}
-    .tp{padding:.25rem .65rem;background:rgba(0,153,187,.06);border:1px solid rgba(0,153,187,.18);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);}
-    .pl{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--accent);text-decoration:none;transition:gap .2s;}
-    .pl:hover{gap:.7rem;}
+    /* ── GALLERY PROJECT CARDS ── */
+    .proj-filters{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.5rem;}
+    .pfb{padding:.45rem 1.1rem;border-radius:20px;border:1px solid var(--border);background:transparent;font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);transition:all .25s ease;}
+    .pfb:hover,.pfb.active{border-color:var(--accent);color:var(--accent);background:rgba(0,153,187,.07);}
 
+    .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
+    .pgrid.hidden-mode .pc-wrap.hidden{display:none;}
+
+    .pc-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:all .3s ease;position:relative;}
+    .pc-wrap:hover{border-color:var(--border-hi);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,153,187,.1);}
+
+    /* thumbnail area */
+    .pc-thumb{position:relative;height:180px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .pc-thumb-bg{position:absolute;inset:0;}
+    .pc-thumb-bg.cat-ml{background:linear-gradient(135deg,#fef3ee,#fde8dc);}
+    .pc-thumb-bg.cat-ai{background:linear-gradient(135deg,#f0efff,#e2e0fd);}
+    .pc-thumb-bg.cat-analytics{background:linear-gradient(135deg,#edfaf4,#d5f5e8);}
+    .pc-thumb-bg.cat-tool{background:linear-gradient(135deg,#fef9ee,#fef0cc);}
+
+    .pc-inner{position:relative;z-index:2;width:72%;height:68%;background:var(--card);border-radius:10px;border:1px solid rgba(0,0,0,.08);transform:rotate(-4deg);display:flex;flex-direction:column;padding:10px 12px;gap:5px;box-shadow:0 8px 24px rgba(0,0,0,.1);overflow:hidden;}
+    .pc-inner::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:10px 10px 0 0;}
+    .cat-ml .pc-inner::before{background:linear-gradient(90deg,#D85A30,#f0997b);}
+    .cat-ai .pc-inner::before{background:linear-gradient(90deg,#7F77DD,#AFA9EC);}
+    .cat-analytics .pc-inner::before{background:linear-gradient(90deg,#1D9E75,#5DCAA5);}
+    .cat-tool .pc-inner::before{background:linear-gradient(90deg,#BA7517,#EF9F27);}
+
+    .pc-inner-title{font-size:9px;font-weight:700;color:var(--text);line-height:1.3;margin-top:5px;letter-spacing:.2px;}
+    .pc-bar{height:4px;border-radius:4px;background:rgba(0,0,0,.06);}
+    .pc-bar.w-full{width:100%;}
+    .pc-bar.w-med{width:75%;}
+    .pc-bar.w-short{width:55%;}
+    .cat-ml .pc-bar{background:rgba(216,90,48,.15);}
+    .cat-ai .pc-bar{background:rgba(127,119,221,.15);}
+    .cat-analytics .pc-bar{background:rgba(29,158,117,.15);}
+    .cat-tool .pc-bar{background:rgba(186,117,23,.15);}
+
+    .pc-dot{width:16px;height:16px;border-radius:50%;margin-top:3px;}
+    .cat-ml .pc-dot{background:rgba(216,90,48,.25);}
+    .cat-ai .pc-dot{background:rgba(127,119,221,.25);}
+    .cat-analytics .pc-dot{background:rgba(29,158,117,.25);}
+    .cat-tool .pc-dot{background:rgba(186,117,23,.25);}
+
+    .pc-accent-circle{position:absolute;bottom:-16px;right:-16px;width:64px;height:64px;border-radius:50%;z-index:1;}
+    .cat-ml .pc-accent-circle{background:rgba(216,90,48,.12);}
+    .cat-ai .pc-accent-circle{background:rgba(127,119,221,.12);}
+    .cat-analytics .pc-accent-circle{background:rgba(29,158,117,.12);}
+    .cat-tool .pc-accent-circle{background:rgba(186,117,23,.12);}
+
+    .pc-corner-icon{position:absolute;top:10px;left:10px;z-index:3;width:26px;height:26px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border-radius:7px;border:1px solid rgba(0,0,0,.07);display:flex;align-items:center;justify-content:center;font-size:13px;}
+    .pc-sparkle{position:absolute;top:10px;right:12px;z-index:3;font-size:14px;opacity:.55;}
+
+    /* card body */
+    .pc-body{padding:1.25rem 1.5rem 1.5rem;flex:1;display:flex;flex-direction:column;}
+    .pc-badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:.25rem .65rem;border-radius:20px;margin-bottom:.6rem;}
+    .cat-ml .pc-badge{background:rgba(216,90,48,.1);color:#993c1d;}
+    .cat-ai .pc-badge{background:rgba(127,119,221,.12);color:#3c3489;}
+    .cat-analytics .pc-badge{background:rgba(29,158,117,.1);color:#085041;}
+    .cat-tool .pc-badge{background:rgba(186,117,23,.1);color:#633806;}
+
+    .pc-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:normal;color:var(--text);margin-bottom:.4rem;line-height:1.35;}
+    .pc-tech{font-size:.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:1rem;flex:1;}
+    .pc-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none;transition:gap .2s ease;}
+    .pc-link:hover{gap:.6rem;}
+    .pc-link svg{flex-shrink:0;}
+
+    /* ── CONTACT ── */
     .cw{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;}
     .cic{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:2.5rem;}
     .cic h3{font-family:'Arial',serif;font-size:1.5rem;font-style:normal;color:var(--text);margin-bottom:.6rem;}
@@ -220,14 +264,13 @@
     #bt.show{opacity:1;visibility:visible;transform:translateY(0);}
     #bt:hover{background:rgba(0,153,187,.1);transform:translateY(-3px);}
 
-    .contact-section-wrap{background:var(--surface);}
-
     @media(max-width:768px){
       .nl{display:none;}.mmb{display:block;}
       .ag{grid-template-columns:1fr;gap:2rem;}
       .aiw{max-width:300px;margin:0 auto;}
       .eh{flex-direction:column;}.em{text-align:left;}
-      .pgrid,.skgrid{grid-template-columns:1fr;}
+      .pgrid{grid-template-columns:1fr;}
+      .skgrid{grid-template-columns:1fr;}
       .fr{grid-template-columns:1fr;}
       #bt{bottom:1.5rem;right:1.5rem;}
     }
@@ -295,7 +338,7 @@
       <a href="https://www.linkedin.com/in/amit-yadav-3408a2308" target="_blank" rel="noopener noreferrer" class="sl" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
       </a>
-      <a href="mailto:amityadav@email.com" class="sl" aria-label="Email">
+      <a href="mailto:amit.y21c@email.com" class="sl" aria-label="Email">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
       </a>
     </div>
@@ -325,7 +368,7 @@
       <div class="ac rev d1">
         <p>Data Science & AI graduate with a strong focus on data analytics and decision-making, driven by a passion for transforming data into meaningful insights.</p>
         <p>Currently, I work as an STP Consultant at EnFuse Solutions, where I specialize in data validation for invoice processing using AWS S3, Excel, and Google Sheets to ensure accuracy and efficiency.</p>
-        <p>I am also working as a Data Analyst Intern with Excelerate, focusing on data visualization and storytelling. I use Power BI and Excel to build interactive dashboards and generate actionable insights from real-world dataset0s.</p>
+        <p>I am also working as a Data Analyst Intern with Excelerate, focusing on data visualization and storytelling. I use Power BI and Excel to build interactive dashboards and generate actionable insights from real-world datasets.</p>
         <p>Previously, I contributed to developing a KPI Intelligence Framework for carbon monitoring, structuring KPIs and supporting data interpretation for environmental insights.</p>
         <p>I am particularly interested in leveraging data analytics for sustainability and climate-focused initiatives, and I am open to opportunities where I can create meaningful impact through data.</p>
         <p>With hands-on experience in Machine Learning, Computer Vision, and Business Intelligence, I've built innovative projects including AI-powered applications, Yoga-Pose Detection, and Adidas Sales Analysis. I'm passionate about leveraging technology to create meaningful impact and solve real-world challenges.</p>
@@ -360,11 +403,10 @@
         <span class="ct">Database Management</span>
       </div>
     </div>
-    </div>
   </div>
 </section>
 
-<!-- EXPERIENCE — fixed: all entries inside one .tl timeline -->
+<!-- EXPERIENCE -->
 <div class="swrap">
   <section id="experience" class="section">
     <div class="rev">
@@ -388,12 +430,12 @@
         <p class="eco">Excelerate</p>
         <p class="edt">April 2026 – Present</p>
         <ul class="eli">
-         <li>Currently part of a global virtual internship in Data Visualization, working in a remote, international team environment.</li>
-         <li>Working with real-world datasets, including data cleaning, analysis, and interpretation.</li>
-         <li>Developing interactive dashboards using Excel and Power BI.</li>
-         <li>Applying data storytelling techniques to communicate insights effectively.</li>
-       </ul>
-     </div>
+          <li>Currently part of a global virtual internship in Data Visualization, working in a remote, international team environment.</li>
+          <li>Working with real-world datasets, including data cleaning, analysis, and interpretation.</li>
+          <li>Developing interactive dashboards using Excel and Power BI.</li>
+          <li>Applying data storytelling techniques to communicate insights effectively.</li>
+        </ul>
+      </div>
       <div class="ei rev d1">
         <p class="etit">Data Analyst Intern</p>
         <p class="eco">SequestraBionix Foundation</p>
@@ -401,7 +443,7 @@
         <ul class="eli">
           <li>Worked on Digital Carbon MRV (Monitoring, Reporting & Verification) systems, contributing to the development of a KPI Intelligence Framework for carbon monitoring.</li>
           <li>Structured and defined key performance indicators (KPIs) for carbon and sustainability analytics.</li>
-          <li> Developed KPI mapping logic and supported data interpretation frameworks.</li>
+          <li>Developed KPI mapping logic and supported data interpretation frameworks.</li>
           <li>Contributed to data-driven approaches for carbon estimation and environmental monitoring.</li>
           <li>Gained practical exposure to applying data analytics in sustainability and climate-focused projects.</li>
         </ul>
@@ -418,12 +460,12 @@
         </ul>
       </div>
       <div class="ei rev d3">
-        <p class="etit"> Consultant</p>
+        <p class="etit">Consultant</p>
         <p class="eco">EnFuse Solutions</p>
         <p class="edt">July 2025</p>
         <ul class="eli">
-          <li>Worked as an Proctoring Consultant Intern to monitor and support remote examination environments. </li>
-          <li> Oversaw test sessions to ensure academic integrity, identified irregular behavior, and reported violations according to company protocols.</li>
+          <li>Worked as a Proctoring Consultant Intern to monitor and support remote examination environments.</li>
+          <li>Oversaw test sessions to ensure academic integrity, identified irregular behavior, and reported violations according to company protocols.</li>
           <li>Verified candidate identity and assisted with technical troubleshooting to provide a smooth testing experience.</li>
           <li>Demonstrated strong attention to detail, punctuality, and analytical thinking in all assigned responsibilities.</li>
         </ul>
@@ -433,9 +475,9 @@
         <p class="eco">Artscape</p>
         <p class="edt">April 2025 – May 2025</p>
         <ul class="eli">
-          <li> Maintained and updated feedback forms and assessment sheets for Artscape sessions in accurate formats.</li>
+          <li>Maintained and updated feedback forms and assessment sheets for Artscape sessions in accurate formats.</li>
           <li>Ensured data consistency and accuracy to support program evaluation and development.</li>
-          <li>Entered, updated, and organized 400 –500+ records using Google Sheets and Excel.</li>
+          <li>Entered, updated, and organized 400–500+ records using Google Sheets and Excel.</li>
           <li>Demonstrated diligence, professionalism, and a strong sense of responsibility throughout the internship.</li>
         </ul>
       </div>
@@ -494,7 +536,7 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS — Gallery Style -->
 <div class="swrap">
   <section id="projects" class="section">
     <div class="rev">
@@ -502,161 +544,249 @@
       <h2 class="st">Featured Projects</h2>
       <p class="sd">A collection of data science and AI projects showcasing my technical skills and problem-solving abilities.</p>
     </div>
-    <div class="pgrid" id="pgrid">
-      <div class="pc rev" data-category="ml">
-        <div class="pt">
-          <span class="pe">🧘‍♂️</span>
-          <span class="pn">01 / ML</span>
-        </div>
-        <div class="pb">
-          <h3>Yoga Pose Detection</h3>
-          <p>Real-time pose detection system using computer vision and machine learning. Implements OpenCV for video processing and pose estimation algorithms to provide accurate feedback on yoga postures.</p>
-          <div class="tps">
-            <span class="tp">OpenCV</span>
-            <span class="tp">Machine Learning</span>
-            <span class="tp">Computer Vision</span>
-            <span class="tp">Python</span>
+
+    <div class="proj-filters rev d1">
+      <button class="pfb active" data-filter="all">All</button>
+      <button class="pfb" data-filter="analytics">Analytics</button>
+      <button class="pfb" data-filter="ml">ML / CV</button>
+      <button class="pfb" data-filter="ai">AI</button>
+      <button class="pfb" data-filter="tool">Tools</button>
+    </div>
+
+    <div class="pgrid hidden-mode" id="pgrid">
+
+      <!-- 01 Yoga Pose Detection -->
+      <div class="pc-wrap rev cat-ml" data-category="ml">
+        <div class="pc-thumb cat-ml">
+          <div class="pc-thumb-bg cat-ml"></div>
+          <div class="pc-corner-icon">🧘</div>
+          <div class="pc-inner cat-ml">
+            <div class="pc-inner-title">Yoga Pose Detection</div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-med"></div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-dot"></div>
           </div>
-          <a href="#" class="pl">View on Hugging Face →</a>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-ml">ML / CV</span>
+          <h3 class="pc-title">Yoga Pose Detection</h3>
+          <p class="pc-tech">OpenCV · Machine Learning · Computer Vision · Python</p>
+          <a href="#" class="pc-link">
+            View on Hugging Face
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
-      <div class="pc rev d1" data-category="ai">
-        <div class="pt">
-          <span class="pe">🤖</span>
-          <span class="pn">02 / AI</span>
-        </div>
-        <div class="pb">
-          <h3>AI-Powered Learning Assistant</h3>
-          <p>Interactive educational platform built with Streamlit and Google Gemini API. Provides personalized learning experiences with intelligent question answering and study material generation.</p>
-          <div class="tps">
-            <span class="tp">Streamlit</span>
-            <span class="tp">Google Gemini API</span>
-            <span class="tp">Python</span>
-            <span class="tp">NLP</span>
-          </div>
-          <a href="https://github.com/mr-amit-yadav/AI_Powered_Learning_Assistant" target="_blank" rel="noopener noreferrer" class="pl">View Project →</a>
-        </div>
+
+      <!-- 02 AI Learning Assistant -->
+    <div class="pc-wrap rev d1 cat-ai" data-category="ai">
+      <div class="pc-thumb cat-ai">
+        <img src="images/ai-powered learning assistant.png" alt="AI Learning Assistant preview"
+         style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="pc-corner-icon">🤖</div>
+          <span class="pc-sparkle">✦</span>
       </div>
-      <div class="pc rev d2" data-category="analytics">
-        <div class="pt">
-          <span class="pe">📊</span>
-          <span class="pn">03 / Analytics</span>
-        </div>
-        <div class="pb">
-          <h3>Adidas Sales Analysis</h3>
-          <p>Comprehensive sales analytics dashboard featuring interactive visualizations and business insights. Analyzes sales trends, customer behavior, and product performance using advanced data analysis techniques.</p>
-          <div class="tps">
-            <span class="tp">Streamlit</span>
-            <span class="tp">Pandas</span>
-            <span class="tp">Data Visualization</span>
-            <span class="tp">Business Intelligence</span>
-          </div>
-          <a href="https://github.com/mr-amit-yadav/Adidas-streamlit-Dashboard" target="_blank" rel="noopener noreferrer" class="pl">View Dashboard →</a>
-        </div>
-      </div>
-      <div class="pc rev d3" data-category="analytics">
-        <div class="pt">
-          <span class="pe">📈</span>
-          <span class="pn">04 / Analytics</span>
-        </div>
-        <div class="pb">
-          <h3>Data Analyst Dashboards</h3>
-          <p>Collection of professional Power BI dashboards demonstrating expertise in business intelligence and data storytelling. Features KPI tracking, trend analysis, and actionable insights for decision-making.</p>
-          <div class="tps">
-            <span class="tp">Power BI</span>
-            <span class="tp">DAX</span>
-            <span class="tp">Business Intelligence</span>
-          </div>
-          <a href="#" class="pl">View Portfolio →</a>
-        </div>
-      </div>
-      <div class="pc rev d1" data-category="analytics">
-        <div class="pt">
-          <span class="pe">🛒</span>
-          <span class="pn">05 / Analytics</span>
-        </div>
-        <div class="pb">
-          <h3>Chips Customer Purchase Analysis</h3>
-          <p>Exploratory data analysis of customer purchasing behavior for chips products. Uncovers key buying patterns, demographic insights, and sales trends to support strategic retail decision-making.</p>
-          <div class="tps">
-            <span class="tp">Data Analysis</span>
-            <span class="tp">Exploratory Data Analysis</span>
-            <span class="tp">Feature Engineering</span>
-            <span class="tp">Python</span>
-          </div>
-          <a href="https://github.com/mr-amit-yadav/Chips-Customer-Purchase-Analysis" target="_blank" rel="noopener noreferrer" class="pl">View on GitHub →</a>
-        </div>
-      </div>
-      <div class="pc rev d2" data-category="analytics">
-        <div class="pt">
-          <span class="pe">🍷</span>
-          <span class="pn">06 / Analytics</span>
-        </div>
-        <div class="pb">
-          <h3>Red Wine Exploratory Data Analysis</h3>
-          <p>In-depth exploratory analysis of red wine quality datasets. Investigates physicochemical properties, correlations, and statistical distributions to understand the factors influencing wine quality.</p>
-          <div class="tps">
-            <span class="tp">Data Analysis</span>
-            <span class="tp">Exploratory Data Analysis</span>
-            <span class="tp">Python</span>
-            <span class="tp">Matplotlib & Seaborn</span>
-          </div>
-          <a href="https://github.com/mr-amit-yadav/Red-Wine-Exploratory-Data-Analysis" target="_blank" rel="noopener noreferrer" class="pl">View on GitHub →</a>
-        </div>
-      </div>
-      <div class="pc rev d3" data-category="analytics">
-        <div class="pt">
-          <span class="pe">💳</span>
-          <span class="pn">07 / Analytics</span>
-        </div>
-        <div class="pb">
-          <h3>UPI Transaction Analytics Dashboard</h3>
-          <p>Interactive analytics dashboard for monitoring and visualizing UPI payment transaction data. Provides real-time insights into transaction volumes, trends, and anomalies across digital payment flows.</p>
-          <div class="tps">
-            <span class="tp">Python</span>
-            <span class="tp">Streamlit</span>
-            <span class="tp">Data Visualization</span>
-            <span class="tp">FinTech</span>
-          </div>
-          <a href="https://github.com/mr-amit-yadav/UPI-Transaction-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="pl">View on GitHub →</a>
-        </div>
-      </div>
-      <div class="pc rev d1" data-category="ml">
-        <div class="pt">
-          <span class="pe">⚡</span>
-          <span class="pn">08 / ML</span>
-        </div>
-        <div class="pb">
-          <h3>ElectroHub - Power BI Sales Analytics Dashboard</h3>
-          <p>A comprehensive retail sales analytics dashboard built in Power BI for ElectroHub, a multi-category store selling Electronics, Footwear, Clothing, Home Appliances, Accessories, Kitchenware, Bags, and Personal Care products.</p>
-          <div class="tps">
-            <span class="tp">PowerBI</span>
-            <span class="tp">Data Analysis</span>
-            <span class="tp">Data Visulaization</span>
-          </div>
-          <a href="https://github.com/mr-amit-yadav/Electrohub" target="_blank" rel="noopener noreferrer" class="pl">View on GitHub →</a>
-        </div>
-      </div>
-      <div class="pc rev d2" data-category="ai">
-        <div class="pt">
-          <span class="pe">📷</span>
-          <span class="pn">09 / AI</span>
-        </div>
-        <div class="pb">
-          <h3>QR Code Generator</h3>
-          <p>A Python-based QR Code Generator that creates customizable QR codes from any input text or URL. Simple, efficient, and lightweight — ideal for quick digital link sharing and encoding.</p>
-          <div class="tps">
-            <span class="tp">Python</span>
-            <span class="tp">Streamlit</span>
-          </div>
-          <a href="https://github.com/mr-amit-yadav/QR-Code-Generator" target="_blank" rel="noopener noreferrer" class="pl">View on GitHub →</a>
-        </div>
+       <div class="pc-body">
+         <span class="pc-badge cat-ai">AI</span>
+         <h3 class="pc-title">AI-Powered Learning Assistant</h3>
+         <p class="pc-tech">Streamlit · Google Gemini API · Python · NLP</p>
+         <a href="https://github.com/mr-amit-yadav/AI_Powered_Learning_Assistant" target="_blank" rel="noopener noreferrer" class="pc-link">
+         View Project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+         </a>
       </div>
     </div>
+
+      <!-- 03 Adidas Sales -->
+      <div class="pc-wrap rev d2 cat-analytics" data-category="analytics">
+        <div class="pc-thumb cat-analytics">
+          <div class="pc-thumb-bg cat-analytics"></div>
+          <div class="pc-corner-icon">📊</div>
+          <div class="pc-inner cat-analytics">
+            <div class="pc-inner-title">Adidas Sales Analysis</div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-dot"></div>
+          </div>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-analytics">Analytics</span>
+          <h3 class="pc-title">Adidas Sales Analysis</h3>
+          <p class="pc-tech">Streamlit · Pandas · Data Visualization · Business Intelligence</p>
+          <a href="https://github.com/mr-amit-yadav/Adidas-streamlit-Dashboard" target="_blank" rel="noopener noreferrer" class="pc-link">
+            View Dashboard
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 04 Power BI Dashboards -->
+      <div class="pc-wrap rev d3 cat-analytics" data-category="analytics">
+        <div class="pc-thumb cat-analytics">
+          <div class="pc-thumb-bg cat-analytics"></div>
+          <div class="pc-corner-icon">📈</div>
+          <div class="pc-inner cat-analytics">
+            <div class="pc-inner-title">Data Analyst Dashboards</div>
+            <div class="pc-bar w-med"></div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-dot"></div>
+          </div>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-analytics">Analytics</span>
+          <h3 class="pc-title">Data Analyst Dashboards</h3>
+          <p class="pc-tech">Power BI · DAX · Business Intelligence</p>
+          <a href="#" class="pc-link">
+            View Portfolio
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 05 Chips Purchase Analysis -->
+      <div class="pc-wrap rev d1 cat-analytics" data-category="analytics">
+        <div class="pc-thumb cat-analytics">
+          <div class="pc-thumb-bg cat-analytics"></div>
+          <div class="pc-corner-icon">🛒</div>
+          <div class="pc-inner cat-analytics">
+            <div class="pc-inner-title">Chips Purchase Analysis</div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-med"></div>
+            <div class="pc-dot"></div>
+          </div>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-analytics">Analytics</span>
+          <h3 class="pc-title">Chips Customer Purchase Analysis</h3>
+          <p class="pc-tech">Python · EDA · Feature Engineering</p>
+          <a href="https://github.com/mr-amit-yadav/Chips-Customer-Purchase-Analysis" target="_blank" rel="noopener noreferrer" class="pc-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 06 Red Wine EDA -->
+      <div class="pc-wrap rev d2 cat-analytics" data-category="analytics">
+        <div class="pc-thumb cat-analytics">
+          <div class="pc-thumb-bg cat-analytics"></div>
+          <div class="pc-corner-icon">🍷</div>
+          <div class="pc-inner cat-analytics">
+            <div class="pc-inner-title">Red Wine EDA</div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-bar w-med"></div>
+            <div class="pc-dot"></div>
+          </div>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-analytics">Analytics</span>
+          <h3 class="pc-title">Red Wine Exploratory Data Analysis</h3>
+          <p class="pc-tech">Python · Matplotlib · Seaborn</p>
+          <a href="https://github.com/mr-amit-yadav/Red-Wine-Exploratory-Data-Analysis" target="_blank" rel="noopener noreferrer" class="pc-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 07 UPI Dashboard -->
+      <div class="pc-wrap rev d3 cat-analytics" data-category="analytics">
+        <div class="pc-thumb cat-analytics">
+          <div class="pc-thumb-bg cat-analytics"></div>
+          <div class="pc-corner-icon">💳</div>
+          <div class="pc-inner cat-analytics">
+            <div class="pc-inner-title">UPI Transaction Analytics</div>
+            <div class="pc-bar w-med"></div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-dot"></div>
+          </div>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-analytics">Analytics</span>
+          <h3 class="pc-title">UPI Transaction Analytics Dashboard</h3>
+          <p class="pc-tech">Python · Streamlit · Data Visualization · FinTech</p>
+          <a href="https://github.com/mr-amit-yadav/UPI-Transaction-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="pc-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 08 ElectroHub -->
+      <div class="pc-wrap rev d1 cat-ml" data-category="ml">
+        <div class="pc-thumb cat-ml">
+          <div class="pc-thumb-bg cat-ml"></div>
+          <div class="pc-corner-icon">⚡</div>
+          <div class="pc-inner cat-ml">
+            <div class="pc-inner-title">ElectroHub Sales Dashboard</div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-bar w-med"></div>
+            <div class="pc-dot"></div>
+          </div>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-ml">ML / CV</span>
+          <h3 class="pc-title">ElectroHub — Power BI Sales Analytics</h3>
+          <p class="pc-tech">Power BI · Data Analysis · Data Visualization</p>
+          <a href="https://github.com/mr-amit-yadav/Electrohub" target="_blank" rel="noopener noreferrer" class="pc-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 09 QR Code Generator -->
+      <div class="pc-wrap rev d2 cat-tool" data-category="tool">
+        <div class="pc-thumb cat-tool">
+          <div class="pc-thumb-bg cat-tool"></div>
+          <div class="pc-corner-icon">📷</div>
+          <div class="pc-inner cat-tool">
+            <div class="pc-inner-title">QR Code Generator</div>
+            <div class="pc-bar w-short"></div>
+            <div class="pc-bar w-full"></div>
+            <div class="pc-bar w-med"></div>
+            <div class="pc-dot"></div>
+          </div>
+          <div class="pc-accent-circle"></div>
+          <span class="pc-sparkle">✦</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-badge cat-tool">Tool</span>
+          <h3 class="pc-title">QR Code Generator</h3>
+          <p class="pc-tech">Python · Streamlit</p>
+          <a href="https://github.com/mr-amit-yadav/QR-Code-Generator" target="_blank" rel="noopener noreferrer" class="pc-link">
+            View on GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /pgrid -->
   </section>
 </div>
 
-<!-- VOLUNTEERING — new section -->
+<!-- VOLUNTEERING -->
 <section id="volunteering" class="section">
   <div class="rev">
     <p class="ey">Giving Back</p>
@@ -776,12 +906,13 @@
 (function(){
   'use strict';
 
+  /* ── Custom cursor ── */
   const cd = document.getElementById('cd');
   const cr = document.getElementById('cr');
   let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cd.style.left=mx+'px'; cd.style.top=my+'px'; });
+  document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cd.style.left=mx+'px'; cd.style.top=my+'px'; });
   (function animCursor(){
-    rx += (mx-rx)*.12; ry += (my-ry)*.12;
+    rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
     cr.style.left=rx+'px'; cr.style.top=ry+'px';
     requestAnimationFrame(animCursor);
   })();
@@ -790,103 +921,114 @@
     el.addEventListener('mouseleave',()=>{ cr.style.width='32px'; cr.style.height='32px'; cr.style.opacity='.5'; });
   });
 
+  /* ── Loader ── */
   const loader = document.getElementById('loader');
-  window.addEventListener('load',()=> setTimeout(()=>loader.classList.add('out'), 500));
+  window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('out'),500));
 
+  /* ── Scroll progress bar ── */
   const sb = document.getElementById('sb');
   window.addEventListener('scroll',()=>{
-    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-    sb.style.width = pct + '%';
-  }, {passive:true});
-
-  const nav = document.getElementById('navbar');
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nl a');
-  window.addEventListener('scroll',()=>{
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-    let cur='';
-    sections.forEach(s=>{ if(window.scrollY >= s.offsetTop-120) cur=s.id; });
-    navLinks.forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+cur));
+    const pct=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+    sb.style.width=pct+'%';
   },{passive:true});
 
-  document.getElementById('fyear').textContent = new Date().getFullYear();
+  /* ── Navbar active link ── */
+  const nav=document.getElementById('navbar');
+  const sections=document.querySelectorAll('section[id]');
+  const navLinks=document.querySelectorAll('.nl a');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled',window.scrollY>50);
+    let cur='';
+    sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-120) cur=s.id; });
+    navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));
+  },{passive:true});
 
-  const mmbtn = document.getElementById('mmbtn');
-  const mobnav = document.getElementById('mobnav');
-  const mobclose = document.getElementById('mobclose');
+  /* ── Footer year ── */
+  document.getElementById('fyear').textContent=new Date().getFullYear();
+
+  /* ── Mobile nav ── */
+  const mmbtn=document.getElementById('mmbtn');
+  const mobnav=document.getElementById('mobnav');
+  const mobclose=document.getElementById('mobclose');
   mmbtn.addEventListener('click',()=>{ mobnav.classList.add('open'); document.body.style.overflow='hidden'; });
   mobclose.addEventListener('click',()=>{ mobnav.classList.remove('open'); document.body.style.overflow=''; });
   mobnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ mobnav.classList.remove('open'); document.body.style.overflow=''; }));
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') { mobnav.classList.remove('open'); document.body.style.overflow=''; }});
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ mobnav.classList.remove('open'); document.body.style.overflow=''; }});
 
-  const bt = document.getElementById('bt');
-  window.addEventListener('scroll',()=>bt.classList.toggle('show', window.scrollY>400),{passive:true});
+  /* ── Back to top ── */
+  const bt=document.getElementById('bt');
+  window.addEventListener('scroll',()=>bt.classList.toggle('show',window.scrollY>400),{passive:true});
   bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
+  /* ── Smooth scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',function(e){
-      const t = document.querySelector(this.getAttribute('href'));
+      const t=document.querySelector(this.getAttribute('href'));
       if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
     });
   });
 
-  const revObs = new IntersectionObserver(entries=>{
+  /* ── Reveal on scroll ── */
+  const revObs=new IntersectionObserver(entries=>{
     entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('up'); revObs.unobserve(en.target); }});
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rev').forEach(el=>revObs.observe(el));
 
-  const fbns = document.querySelectorAll('.fbn');
-  const pcs = document.querySelectorAll('.pc');
-  fbns.forEach(btn=>{
+  /* ── Project filters ── */
+  const pfBtns=document.querySelectorAll('.pfb');
+  const pcWraps=document.querySelectorAll('.pc-wrap');
+  pfBtns.forEach(btn=>{
     btn.addEventListener('click',()=>{
-      fbns.forEach(b=>b.classList.remove('active'));
+      pfBtns.forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
-      const f = btn.dataset.filter;
-      pcs.forEach(c=>{ const show = f==='all' || c.dataset.category===f; c.classList.toggle('hidden',!show); });
+      const f=btn.dataset.filter;
+      pcWraps.forEach(c=>{
+        const show=f==='all'||c.dataset.category===f;
+        c.classList.toggle('hidden',!show);
+      });
     });
   });
 
-  const form = document.getElementById('contact-form');
-  function vf(id, errId, fn){
-    const el=document.getElementById(id), err=document.getElementById(errId);
-    const ok = fn(el.value.trim());
+  /* ── Contact form ── */
+  const form=document.getElementById('contact-form');
+  function vf(id,errId,fn){
+    const el=document.getElementById(id),err=document.getElementById(errId);
+    const ok=fn(el.value.trim());
     el.classList.toggle('err',!ok);
-    err.style.display = ok?'none':'block';
+    err.style.display=ok?'none':'block';
     return ok;
   }
   form.addEventListener('submit',e=>{
     e.preventDefault();
-    const n = vf('cf-name','name-err',v=>v.length>=2);
-    const em = vf('cf-email','email-err',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-    const s = vf('cf-subject','subject-err',v=>v.length>=3);
-    const m = vf('cf-message','message-err',v=>v.length>=10);
+    const n=vf('cf-name','name-err',v=>v.length>=2);
+    const em=vf('cf-email','email-err',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    const s=vf('cf-subject','subject-err',v=>v.length>=3);
+    const m=vf('cf-message','message-err',v=>v.length>=10);
     if(n&&em&&s&&m){
       form.reset();
-      const ok = document.getElementById('fok');
+      const ok=document.getElementById('fok');
       ok.style.display='block';
       setTimeout(()=>ok.style.display='none',5000);
     }
   });
   form.querySelectorAll('input,textarea').forEach(el=>{
-    el.addEventListener('input',()=>{ el.classList.remove('err'); });
+    el.addEventListener('input',()=>el.classList.remove('err'));
   });
 
 })();
 </script>
+
 <script>
-  const texts = ["I'm a Data Analyst","I'm an Agentic AI Developer","I'm an AI Enthusiast","I turn Data into Insights"];
-  let count = 0, index = 0, currentText = "", letter = "";
-  function type() {
-    if (count === texts.length) count = 0;
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
-    document.getElementById("typing-text").textContent = letter;
-    if (letter.length === currentText.length) {
-      count++; index = 0;
-      setTimeout(type, 1500);
-    } else {
-      setTimeout(type, 70);
-    }
+  /* ── Typing animation ── */
+  const texts=["I'm a Data Analyst","I'm an Agentic AI Developer","I'm an AI Enthusiast","I turn Data into Insights"];
+  let count=0,index=0,currentText="",letter="";
+  function type(){
+    if(count===texts.length) count=0;
+    currentText=texts[count];
+    letter=currentText.slice(0,++index);
+    document.getElementById("typing-text").textContent=letter;
+    if(letter.length===currentText.length){ count++; index=0; setTimeout(type,1500); }
+    else{ setTimeout(type,70); }
   }
   type();
 </script>
