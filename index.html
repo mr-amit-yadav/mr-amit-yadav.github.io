@@ -1,0 +1,2994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amit Yadav – Data Analyst & AI Enthusiast.">
+  <meta name="keywords" content="Amit Yadav, Data Analyst, Data Science, Artificial Intelligence, Machine Learning, Python, Power BI, Mumbai, Portfolio">
+  <meta name="author" content="Amit Yadav">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Amit Yadav | Data Analyst & AI Enthusiast">
+  <meta property="og:description" content="Data Science & AI student passionate about uncovering insights and building intelligent solutions.">
+  <meta property="og:image" content="amit1.jpeg">
+  <meta property="og:url" content="https://mr-amit-yadav.github.io">
+  <title>Amit Yadav | Data Analyst & Data Science Student</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e87532'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' dominant-baseline='hanging' fill='white' font-family='serif' font-style='italic' font-weight='900'>A</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#f6efe1;--surface:#efe4cf;--card:#fbf6ea;
+      --border:#ded5c5;--border-hi:rgba(232,117,50,.35);
+      --text:#17120f;--muted:#795f51;
+      --accent:#e87532;--accent2:#c65328;--accent3:#a9762a;
+      --glow:0 0 40px rgba(232,117,50,.15);
+      --r:16px;--r-lg:24px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--ink);color:var(--text);line-height:1.7;overflow-x:hidden;}
+    ::selection{background:var(--accent);color:#fff;}
+
+    *{cursor:none!important;}
+    #cd,#cr{position:fixed;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);}
+    #cd{width:6px;height:6px;background:var(--accent);top:0;left:0;}
+    #cr{width:32px;height:32px;border:1.5px solid var(--accent);opacity:.5;top:0;left:0;transition:width .2s,height .2s,opacity .3s,border-color .3s;}
+    @media(max-width:768px){*{cursor:auto!important;}#cd,#cr{display:none;}}
+
+    #loader{position:fixed;inset:0;z-index:9998;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity .5s,visibility .5s;}
+    #loader.out{opacity:0;visibility:hidden;}
+    .ln{font-family:Georgia,'Times New Roman',serif;font-size:2rem;font-style:italic;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .lbw{width:200px;height:2px;background:rgba(0,0,0,.1);border-radius:99px;overflow:hidden;}
+    .lb{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;animation:lfill 1.6s ease forwards;}
+    @keyframes lfill{from{width:0}to{width:100%}}
+
+    #sb{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9000;box-shadow:0 0 8px var(--accent);transition:width .1s linear;}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 5%;transition:all .35s ease;border-bottom:1px solid transparent;}
+    nav.scrolled{background:rgba(246,239,225,.95);backdrop-filter:blur(20px);border-color:var(--border);}
+    .nc{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-family:Georgia,'Times New Roman',serif;font-size:1.5rem;font-style:normal;color:var(--text);text-decoration:none;}
+    .logo span{color:var(--accent);}
+    .nl{display:flex;gap:2.5rem;list-style:none;}
+    .nl a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .25s;position:relative;}
+    .nl a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s;}
+    .nl a:hover{color:var(--text);}
+    .nl a:hover::after,.nl a.active::after{width:100%;}
+    .nl a.active{color:var(--accent);}
+    .mmb{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;}
+
+    .mn{display:none;position:fixed;inset:0;background:rgba(246,239,225,.97);backdrop-filter:blur(20px);z-index:9990;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
+    .mn.open{display:flex;}
+    .mn a{font-family:Georgia,'Times New Roman',serif;font-size:2.5rem;color:var(--text);text-decoration:none;font-style:normal;transition:color .2s;}
+    .mn a:hover{color:var(--accent);}
+    .mnc{position:absolute;top:1.5rem;right:5%;background:none;border:none;color:var(--muted);font-size:1.6rem;}
+
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+      background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(232,117,50,.09) 0%,transparent 70%),
+                 radial-gradient(ellipse 60% 40% at 80% 80%,rgba(198,83,40,.06) 0%,transparent 60%),var(--ink);}
+    .hero::before{content:'';position:absolute;inset:0;
+      background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);
+      background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);}
+    .hi{position:relative;z-index:2;text-align:center;padding:8rem 2rem 4rem;max-width:1300px;width:100%;animation:hin 1s ease both;}
+    @keyframes hin{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    .twa{color:var(--accent);font-weight:600;}
+    .twc{display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:3px;vertical-align:text-bottom;animation:blink .7s step-end infinite;}
+    @keyframes blink{50%{opacity:0}}
+    .hr-role{min-height:2rem;}
+
+    .ha{margin:0 auto 2.5rem;width:140px;height:140px;position:relative;}
+    .ar{position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(var(--accent),var(--accent2),var(--accent3),var(--accent));animation:spin 8s linear infinite;z-index:0;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .am{position:absolute;inset:3px;border-radius:50%;background:var(--ink);z-index:1;}
+    .ai{position:absolute;inset:6px;border-radius:50%;overflow:hidden;z-index:2;background:linear-gradient(135deg,#4a3728,#6b4c36);display:flex;align-items:center;justify-content:center;font-family:Georgia,'Times New Roman',serif;font-size:3rem;font-weight:700;color:#fff;}
+    .ai img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+
+    .hg{font-size:.85rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;opacity:.8;}
+    .hn{font-family:Georgia,'Times New Roman',serif;font-size:clamp(3.5rem,8vw,6.5rem);font-weight:900;font-style:normal;line-height:1;letter-spacing:-1px;margin-bottom:1.25rem;background:linear-gradient(135deg,#17120f 40%,rgba(23,18,15,.65) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hr-role{font-size:clamp(1rem,2.5vw,1.35rem);color:var(--muted);margin-bottom:1.5rem;}
+    .hr-role .twa{color:var(--accent);font-weight:600;}
+    .hb{font-size:clamp(.95rem,2vw,1.05rem);color:var(--muted);line-height:1.8;max-width:640px;margin:0 auto 2.5rem;}
+    .hb strong{color:var(--text);font-weight:600;}
+    .hso{display:flex;gap:1rem;justify-content:center;margin-bottom:2.5rem;}
+    .sl{width:48px;height:48px;border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .25s ease;text-decoration:none;}
+    .sl:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,117,50,.07);transform:translateY(-4px);box-shadow:0 8px 20px rgba(232,117,50,.12);}
+    .sh{display:flex;justify-content:center;color:var(--muted);opacity:.5;animation:float 2.5s ease-in-out infinite;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+    /* ── HERO v2 — two-column editorial layout ── */
+    .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4.5rem;align-items:center;text-align:left;max-width:1200px;margin:0 auto;}
+
+    .hero-label{font-size:.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+
+    .hero-name{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.8rem,5.5vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-1px;color:var(--text);margin:0 0 .4rem;}
+
+    .hero-tagline{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.4rem,2.6vw,1.9rem);font-style:italic;font-weight:400;color:var(--accent);margin:0 0 1.5rem;}
+
+    .hero-desc{font-size:1rem;color:var(--muted);line-height:1.75;max-width:480px;margin:0 0 2rem;}
+
+    .hero-cta-row{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:1.75rem;}
+    .hero-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:10px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .25s ease;}
+    .hero-btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);}
+    .hero-btn-primary:hover{background:var(--accent2);border-color:var(--accent2);transform:translateY(-3px);box-shadow:0 12px 28px rgba(232,117,50,.25);}
+    .hero-btn-outline{background:var(--card);color:var(--text);border:1px solid var(--border);}
+    .hero-btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);}
+
+    .hero-social-row{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;}
+    .hero-social-icon{color:var(--muted);display:flex;transition:color .2s ease;}
+    .hero-social-icon:hover{color:var(--accent);}
+    .hero-social-divider{width:1px;height:18px;background:var(--border);}
+    .hero-motto{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:.9rem;color:var(--muted);}
+
+    .hero-stats{display:flex;gap:1rem;flex-wrap:wrap;}
+    .hero-stat{border:1px solid var(--border);border-radius:10px;padding:1rem 1.4rem;background:rgba(255,255,255,.4);min-width:120px;}
+    .hero-stat-num{display:block;font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;font-weight:700;color:var(--accent);}
+    .hero-stat-label{display:block;font-size:.72rem;color:var(--muted);margin-top:.2rem;letter-spacing:.2px;}
+
+    .hero-right{display:flex;justify-content:center;}
+    .hero-photo-card{position:relative;transform:rotate(2.5deg);background:var(--card);border:1px solid var(--border-hi);border-radius:14px;padding:14px 14px 46px;box-shadow:0 30px 70px rgba(23,18,15,.15);max-width:420px;width:100%;transition:transform .4s ease;}
+    .hero-photo-card:hover{transform:rotate(0deg);}
+    .hero-photo-card img{width:100%;display:block;border-radius:6px;object-fit:cover;aspect-ratio:1/1;}
+    .hero-photo-caption{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:0;}
+
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;text-align:center;gap:2.5rem;}
+      .hero-desc{margin-left:auto;margin-right:auto;}
+      .hero-cta-row,.hero-social-row,.hero-stats{justify-content:center;}
+      .hero-right{order:-1;}
+    }
+    @media(max-width:480px){
+      .hero-stats{flex-direction:column;}
+      .hero-stat{width:100%;}
+    }
+
+    .ss{background:linear-gradient(90deg,rgba(232,117,50,.06),rgba(198,83,40,.04));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3.5rem 5%;}
+    .sg{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;text-align:center;}
+    .sn{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.4rem;}
+    .sl2{font-size:.8rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+
+    .section{padding:100px 5%;max-width:1300px;margin:0 auto;}
+    .saw{background:var(--surface);}
+    .swrap{background:var(--surface);}
+    .ey{font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem;}
+    .ey::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent);max-width:80px;}
+    .st{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-style:normal;font-weight:700;color:var(--text);letter-spacing:-.5px;margin-bottom:.75rem;}
+    .sd{font-size:1.05rem;color:var(--muted);max-width:600px;line-height:1.8;}
+
+    .rev{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease;}
+    .rev.up{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+    .ag{display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:start;max-width:1100px;margin:3rem auto 0;}
+    .aiw{position:relative;background:var(--card);padding:1rem 1rem 3.25rem;border-radius:6px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.16);transform:rotate(-3deg);transition:transform .3s ease;}
+    .aiw:hover{transform:rotate(0deg);}
+    .aimg{width:100%;aspect-ratio:3/4;border-radius:2px;object-fit:cover;display:block;}
+    .aip{width:100%;aspect-ratio:3/4;border-radius:2px;background:linear-gradient(135deg,#e8dcc8,#d8c8ae);display:flex;align-items:center;justify-content:center;font-family:Georgia,'Times New Roman',serif;font-size:5rem;color:var(--accent);opacity:.6;}
+    .polaroid-caption{position:absolute;left:0;right:0;bottom:1.1rem;text-align:center;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:1rem;color:var(--muted);}
+    .ats{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;}
+    .at{padding:.35rem .9rem;border:1px solid var(--border-hi);border-radius:20px;font-size:.78rem;font-weight:600;color:var(--accent);background:rgba(232,117,50,.06);letter-spacing:.5px;}
+    .ac{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:2.5rem;}
+    .ac p{font-size:1.05rem;color:var(--muted);line-height:1.9;margin-bottom:1.25rem;}
+    .ac p:last-child{margin-bottom:0;}
+    .ac strong{color:var(--text);font-weight:600;}
+    .lb2{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--accent);font-weight:600;padding:.4rem .9rem;background:rgba(232,117,50,.06);border:1px solid var(--border-hi);border-radius:20px;margin-top:1rem;}
+
+
+    .eg{display:grid;gap:1.5rem;max-width:900px;margin:3rem auto 0;}
+    .ec{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2.25rem;transition:all .3s ease;position:relative;overflow:hidden;}
+    .ec::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .3s;}
+    .ec:hover{border-color:var(--border-hi);transform:translateY(-4px);}
+    .ec:hover::before{opacity:1;}
+    .eh{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;}
+    .ec h3{font-family:'Arial',serif;font-size:1.5rem;font-style:normal;color:var(--text);margin-bottom:.35rem;}
+    .edeg{font-size:.95rem;color:var(--muted);}
+    .em{text-align:right;flex-shrink:0;}
+    .edate{font-size:.82rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+    .egpa{font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:.2rem;}
+    .cts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+    .ct{padding:.3rem .75rem;background:rgba(0,0,0,.04);border:1px solid var(--border);border-radius:6px;font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+
+    .tl{max-width:900px;margin:3rem auto 0;position:relative;}
+    .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--accent),transparent);opacity:.3;}
+    .ei{position:relative;padding:2.25rem 2.25rem 2.25rem 3.5rem;margin-bottom:1.75rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);transition:all .3s ease;}
+    .ei::before{content:'';position:absolute;left:-5px;top:2.25rem;width:10px;height:10px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px var(--accent);}
+    .ei:hover{border-color:var(--border-hi);transform:translateX(8px);}
+    .etit{font-family:'Arial',serif;font-size:1.4rem;font-style:normal;color:var(--text);margin-bottom:.35rem;}
+    .eco{font-size:.95rem;color:var(--accent);font-weight:600;margin-bottom:.25rem;}
+    .edt{font-size:.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:1.25rem;}
+    .eli{list-style:none;}
+    .eli li{color:var(--muted);font-size:.95rem;padding-left:1.5rem;margin-bottom:.8rem;position:relative;line-height:1.6;}
+    .eli li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.8rem;}
+
+    .vol-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .75rem;background:rgba(217,119,6,.08);border:1px solid rgba(217,119,6,.25);border-radius:20px;font-size:.75rem;font-weight:700;color:var(--accent3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.75rem;}
+
+    .skgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:3rem auto 0;}
+    .skc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem;transition:all .3s ease;}
+    .skc:hover{border-color:var(--border-hi);transform:translateY(-5px);box-shadow:0 0 30px rgba(232,117,50,.12);}
+    .skct{font-family:Georgia,'Times New Roman',serif;font-size:1.25rem;font-style:normal;color:var(--text);margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem;}
+    .skts{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .skt{padding:.35rem .85rem;background:rgba(0,0,0,.04);border:1px solid var(--border);border-radius:6px;font-size:.8rem;color:var(--muted);font-weight:500;transition:all .2s ease;}
+    .skt:hover{background:rgba(232,117,50,.08);border-color:var(--accent);color:var(--accent);transform:scale(1.05);}
+
+    /* ── GALLERY PROJECT CARDS ── */
+    .proj-filters{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.5rem;}
+    .pfb{padding:.45rem 1.1rem;border-radius:20px;border:1px solid var(--border);background:transparent;font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);transition:all .25s ease;}
+    .pfb:hover,.pfb.active{border-color:var(--accent);color:var(--accent);background:rgba(232,117,50,.07);}
+
+    .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
+    .pgrid.hidden-mode .pc-wrap.hidden{display:none;}
+
+    .pc-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:all .3s ease;position:relative;}
+    .pc-wrap:hover{border-color:var(--border-hi);transform:translateY(-6px);box-shadow:0 20px 50px rgba(232,117,50,.1);}
+
+    /* thumbnail area */
+    .pc-thumb{position:relative;height:180px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .pc-thumb-bg{position:absolute;inset:0;}
+    .pc-thumb-bg.cat-ml{background:linear-gradient(135deg,#fef3ee,#fde8dc);}
+    .pc-thumb-bg.cat-ai{background:linear-gradient(135deg,#f0efff,#e2e0fd);}
+    .pc-thumb-bg.cat-analytics{background:linear-gradient(135deg,#edfaf4,#d5f5e8);}
+    .pc-thumb-bg.cat-tool{background:linear-gradient(135deg,#fef9ee,#fef0cc);}
+
+    .pc-inner{position:relative;z-index:2;width:72%;height:68%;background:var(--card);border-radius:10px;border:1px solid rgba(0,0,0,.08);transform:rotate(-4deg);display:flex;flex-direction:column;padding:10px 12px;gap:5px;box-shadow:0 8px 24px rgba(0,0,0,.1);overflow:hidden;}
+    .pc-inner::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:10px 10px 0 0;}
+    .cat-ml .pc-inner::before{background:linear-gradient(90deg,#D85A30,#f0997b);}
+    .cat-ai .pc-inner::before{background:linear-gradient(90deg,#7F77DD,#AFA9EC);}
+    .cat-analytics .pc-inner::before{background:linear-gradient(90deg,#1D9E75,#5DCAA5);}
+    .cat-tool .pc-inner::before{background:linear-gradient(90deg,#BA7517,#EF9F27);}
+
+    .pc-inner-title{font-size:9px;font-weight:700;color:var(--text);line-height:1.3;margin-top:5px;letter-spacing:.2px;}
+    .pc-bar{height:4px;border-radius:4px;background:rgba(0,0,0,.06);}
+    .pc-bar.w-full{width:100%;}
+    .pc-bar.w-med{width:75%;}
+    .pc-bar.w-short{width:55%;}
+    .cat-ml .pc-bar{background:rgba(216,90,48,.15);}
+    .cat-ai .pc-bar{background:rgba(127,119,221,.15);}
+    .cat-analytics .pc-bar{background:rgba(29,158,117,.15);}
+    .cat-tool .pc-bar{background:rgba(186,117,23,.15);}
+
+    .pc-dot{width:16px;height:16px;border-radius:50%;margin-top:3px;}
+    .cat-ml .pc-dot{background:rgba(216,90,48,.25);}
+    .cat-ai .pc-dot{background:rgba(127,119,221,.25);}
+    .cat-analytics .pc-dot{background:rgba(29,158,117,.25);}
+    .cat-tool .pc-dot{background:rgba(186,117,23,.25);}
+
+    .pc-accent-circle{position:absolute;bottom:-16px;right:-16px;width:64px;height:64px;border-radius:50%;z-index:1;}
+    .cat-ml .pc-accent-circle{background:rgba(216,90,48,.12);}
+    .cat-ai .pc-accent-circle{background:rgba(127,119,221,.12);}
+    .cat-analytics .pc-accent-circle{background:rgba(29,158,117,.12);}
+    .cat-tool .pc-accent-circle{background:rgba(186,117,23,.12);}
+
+    .pc-corner-icon{position:absolute;top:10px;left:10px;z-index:3;width:26px;height:26px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border-radius:7px;border:1px solid rgba(0,0,0,.07);display:flex;align-items:center;justify-content:center;font-size:13px;}
+    .pc-sparkle{position:absolute;top:10px;right:12px;z-index:3;font-size:14px;opacity:.55;}
+
+    /* card body */
+    .pc-body{padding:1.25rem 1.5rem 1.5rem;flex:1;display:flex;flex-direction:column;}
+    .pc-badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:.25rem .65rem;border-radius:20px;margin-bottom:.6rem;}
+    .cat-ml .pc-badge{background:rgba(216,90,48,.1);color:#993c1d;}
+    .cat-ai .pc-badge{background:rgba(127,119,221,.12);color:#3c3489;}
+    .cat-analytics .pc-badge{background:rgba(29,158,117,.1);color:#085041;}
+    .cat-tool .pc-badge{background:rgba(186,117,23,.1);color:#633806;}
+
+    .pc-title{font-family:Georgia,'Times New Roman',serif;font-size:1.1rem;font-style:normal;color:var(--text);margin-bottom:.4rem;line-height:1.35;}
+    .pc-tech{font-size:.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:1rem;flex:1;}
+    .pc-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none;transition:gap .2s ease;}
+    .pc-link:hover{gap:.6rem;}
+    .pc-link svg{flex-shrink:0;}
+
+    /* =========================================
+   CONTACT — EDITORIAL STYLE
+   ========================================= */
+
+.contact-editorial {
+    padding-top: 90px;
+    padding-bottom: 85px;
+}
+
+
+/* -----------------------------------------
+   HEADING
+   ----------------------------------------- */
+
+.contact-heading {
+    margin-bottom: 42px;
+}
+
+.contact-eyebrow {
+    margin: 0 0 12px;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #e87532;
+}
+
+.contact-title {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(42px, 5vw, 58px);
+    font-weight: 500;
+    line-height: 1.05;
+
+    color: #17120f;
+}
+
+.contact-title em {
+    color: #e87532;
+    font-weight: 400;
+}
+
+
+/* -----------------------------------------
+   MAIN TWO-COLUMN LAYOUT
+   ----------------------------------------- */
+
+.contact-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.94fr);
+
+    gap: 75px;
+
+    align-items: start;
+}
+
+
+/* -----------------------------------------
+   LEFT INTRO
+   ----------------------------------------- */
+
+.contact-intro {
+    padding-top: 2px;
+}
+
+.contact-description {
+    max-width: 430px;
+
+    margin: 0 0 27px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+    line-height: 1.65;
+
+    color: #795f51;
+}
+
+
+/* -----------------------------------------
+   CONTACT LINKS
+   ----------------------------------------- */
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    color: #352b25;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #e87532;
+}
+
+
+/* -----------------------------------------
+   CONTACT ICON
+   ----------------------------------------- */
+
+.contact-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid #ded5c5;
+    border-radius: 4px;
+
+    color: #e87532;
+
+    background: rgba(255,255,255,0.18);
+}
+
+.contact-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* -----------------------------------------
+   SOCIAL LINKS
+   ----------------------------------------- */
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    max-width: 480px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #ded5c5;
+    border-radius: 4px;
+
+    background: rgba(255,255,255,0.15);
+
+    color: #594b42;
+
+    text-decoration: none;
+
+    font-family: monospace;
+    font-size: 10px;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.social-link svg {
+    width: 12px;
+    height: 12px;
+}
+
+.social-link:hover {
+    color: #e87532;
+
+    border-color: #e87532;
+
+    background: #f5eee3;
+}
+
+
+/* -----------------------------------------
+   FORM CARD
+   ----------------------------------------- */
+
+.contact-form-card {
+    padding: 27px 21px 21px;
+
+    border: 1px solid #ded5c5;
+    border-radius: 6px;
+
+    background: rgba(255,255,255,0.18);
+}
+
+
+/* -----------------------------------------
+   FORM
+   ----------------------------------------- */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 19px;
+}
+
+
+/* -----------------------------------------
+   FIELD
+   ----------------------------------------- */
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.contact-field label {
+    font-family: monospace;
+
+    font-size: 10px;
+
+    color: #493c34;
+}
+
+
+/* -----------------------------------------
+   INPUTS
+   ----------------------------------------- */
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d8cdbb;
+    border-radius: 5px;
+
+    background: #f1eadd;
+
+    color: #352b25;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.contact-field input {
+    height: 33px;
+
+    padding: 0 12px;
+}
+
+.contact-field textarea {
+    min-height: 92px;
+
+    padding: 10px 12px;
+
+    resize: vertical;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+    color: #9a8c7e;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border-color: #e87532;
+
+    background: #f7f1e7;
+
+    box-shadow:
+        0 0 0 2px rgba(232,117,50,0.08);
+}
+
+
+/* -----------------------------------------
+   VALIDATION ERRORS
+   ----------------------------------------- */
+
+.contact-error {
+    display: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    color: #c65328;
+}
+
+
+/* -----------------------------------------
+   SUBMIT BUTTON
+   ----------------------------------------- */
+
+.contact-submit {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 2px;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #df7332;
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-submit svg {
+    width: 13px;
+    height: 13px;
+}
+
+.contact-submit:hover {
+    background: #cf6428;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(190,85,35,0.18);
+}
+
+.contact-submit:active {
+    transform: translateY(0);
+}
+
+
+/* -----------------------------------------
+   SUCCESS MESSAGE
+   ----------------------------------------- */
+
+.contact-success {
+    display: none;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d7c9b5;
+    border-radius: 4px;
+
+    background: #f3ecdf;
+
+    color: #665348;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+}
+
+
+/* -----------------------------------------
+   TABLET
+   ----------------------------------------- */
+
+@media (max-width: 850px) {
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .contact-description {
+        max-width: 600px;
+    }
+
+}
+
+
+/* -----------------------------------------
+   MOBILE
+   ----------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .contact-editorial {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .contact-title {
+        font-size: 40px;
+    }
+
+    .contact-layout {
+        gap: 35px;
+    }
+
+    .contact-form-card {
+        padding: 22px 17px 18px;
+    }
+
+    .social-links {
+        gap: 6px;
+    }
+
+}
+/* =========================================
+   PROJECTS — EDITORIAL GALLERY
+   ========================================= */
+
+.projects-editorial {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+
+/* -----------------------------------------
+   HEADING
+   ----------------------------------------- */
+
+.projects-heading {
+    margin-bottom: 46px;
+}
+
+.projects-eyebrow {
+    margin: 0 0 12px;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #e87532;
+}
+
+.projects-title {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 58px);
+    font-weight: 500;
+    line-height: 1.05;
+
+    color: #17120f;
+}
+
+.projects-title em {
+    color: #e87532;
+    font-weight: 400;
+}
+
+
+/* -----------------------------------------
+   PROJECT GRID
+   ----------------------------------------- */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* -----------------------------------------
+   BEYOND THE DATA
+   ----------------------------------------- */
+
+.beyond-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 18px;
+}
+
+.beyond-large {
+    grid-row: 1 / 3;
+}
+
+.beyond-card {
+    position: relative;
+    min-height: 190px;
+    padding: 22px;
+    border-radius: var(--r-lg);
+    border: 1px solid var(--border);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.beyond-large {
+    min-height: 398px;
+}
+
+.beyond-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.18);
+}
+
+.beyond-tag {
+    font-family: monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+
+.beyond-card h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fdf8ee;
+    margin: 0 0 4px;
+}
+
+.beyond-large h3 {
+    font-size: 1.5rem;
+}
+
+.beyond-card p {
+    font-size: .85rem;
+    color: rgba(253,248,238,.78);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 320px;
+}
+
+.beyond-solid {
+    background: linear-gradient(135deg,#e8dcc8,#d8c8ae);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.beyond-jp {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.beyond-solid-label {
+    font-family: monospace;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.beyond-quote {
+    grid-column: 1 / 2;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 28px 32px;
+}
+
+.beyond-quote p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.beyond-quote span {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: .9rem;
+    color: var(--accent);
+}
+
+@media (max-width: 900px) {
+    .beyond-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .beyond-large {
+        grid-column: 1 / 3;
+        grid-row: auto;
+        min-height: 260px;
+    }
+    .beyond-quote {
+        grid-column: 1 / 3;
+    }
+}
+
+@media (max-width: 560px) {
+    .beyond-grid {
+        grid-template-columns: 1fr;
+    }
+    .beyond-large, .beyond-quote {
+        grid-column: 1;
+    }
+}
+
+
+/* -----------------------------------------
+   PROJECT CARD
+   ----------------------------------------- */
+
+.project-card {
+    overflow: hidden;
+
+    border: 1px solid #ded5c5;
+    border-radius: 7px;
+
+    background: #f2ecdf;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #cfc2ad;
+
+    box-shadow:
+        0 15px 35px rgba(45, 30, 20, 0.09);
+}
+
+
+/* -----------------------------------------
+   PROJECT IMAGE
+   ----------------------------------------- */
+
+.project-image {
+    width: 100%;
+    height: 155px;
+
+    overflow: hidden;
+
+    background: #ddd3c2;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+
+/* -----------------------------------------
+   PROJECT CONTENT
+   ----------------------------------------- */
+
+.project-content {
+    padding: 18px 18px 20px;
+}
+
+
+/* -----------------------------------------
+   META
+   ----------------------------------------- */
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.project-meta span {
+    font-family: monospace;
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+
+    color: #e87532;
+}
+
+.project-meta a {
+    color: #75675c;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.project-meta a:hover {
+    color: #e87532;
+    transform: translate(2px, -2px);
+}
+
+
+/* -----------------------------------------
+   PROJECT TITLE
+   ----------------------------------------- */
+
+.project-content h3 {
+    margin: 0 0 8px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    color: #17120f;
+}
+
+
+/* -----------------------------------------
+   DESCRIPTION
+   ----------------------------------------- */
+
+.project-content p {
+    margin: 0;
+
+    min-height: 84px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+    line-height: 1.55;
+
+    color: #795f51;
+}
+
+
+/* -----------------------------------------
+   TAGS
+   ----------------------------------------- */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 13px;
+}
+
+.project-tags span {
+    padding: 4px 7px;
+
+    border: 1px solid #d8cdbb;
+    border-radius: 3px;
+
+    background: rgba(255,255,255,0.22);
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    color: #705b4d;
+}
+
+
+/* -----------------------------------------
+   MORE PROJECTS
+   ----------------------------------------- */
+
+.more-projects {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+.more-projects a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #ded5c5;
+    border-radius: 5px;
+
+    background: rgba(255,255,255,0.18);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+
+    color: #352b25;
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.more-projects a:hover {
+    border-color: #e87532;
+
+    background: #f4ede2;
+
+    color: #e87532;
+}
+
+.github-symbol {
+    font-size: 14px;
+}
+
+.more-arrow {
+    font-size: 13px;
+}
+
+
+/* -----------------------------------------
+   RESPONSIVE — TABLET
+   ----------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* -----------------------------------------
+   RESPONSIVE — MOBILE
+   ----------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .projects-editorial {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .projects-title {
+        font-size: 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .project-image {
+        height: 190px;
+    }
+
+    .project-content p {
+        min-height: auto;
+    }
+
+    .more-projects a {
+        text-align: center;
+        line-height: 1.5;
+    }
+
+}
+
+/* CARD GRID */
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* CARD */
+
+.tool-card {
+    min-height: 275px;
+    padding: 28px;
+    border: 1px solid #ded5c5;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.18);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-6px);
+    border-color: #e87532;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 14px 35px rgba(60, 40, 20, 0.08);
+}
+
+
+/* TOP ROW */
+
+.tool-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+
+/* ICON */
+
+.tool-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ded5c5;
+    border-radius: 6px;
+
+    color: #e87532;
+    background: #f2ecdf;
+}
+
+.tool-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+
+/* SMALL LABEL */
+
+.tool-label {
+    margin-top: 4px;
+
+    font-family: monospace;
+    font-size: 12px;
+    color: #493c34;
+
+    text-transform: lowercase;
+}
+
+
+/* CARD TITLE */
+
+.tool-card h3 {
+    margin: 0 0 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 600;
+
+    color: #17120f;
+}
+
+
+/* CARD DESCRIPTION */
+
+.tool-card p {
+    margin: 0;
+
+    max-width: 330px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+
+    color: #795f51;
+}
+
+
+/* TAGS */
+
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 40px;
+}
+
+.tool-tags span {
+    padding: 7px 12px;
+
+    border: 1px solid #ded5c5;
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    font-family: monospace;
+    font-size: 12px;
+
+    color: #654e42;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.tool-tags span:hover {
+    color: #e87532;
+    border-color: #e87532;
+    background: #f5eee3;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tools-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .tools-title {
+        font-size: 40px;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-card {
+        min-height: auto;
+    }
+
+    .tool-tags {
+        margin-top: 28px;
+    }
+}
+  </style>
+  <style>
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lb2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.5;
+}
+/* =========================================
+   ENHANCED FOOTER
+   ========================================= */
+
+.footer {
+    position: relative;
+    overflow: hidden;
+
+    margin-top: 100px;
+
+    background: #0b0b0b;
+    color: #fff;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 200px;
+
+    top: -120px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(255,255,255,.08),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+.footer-inner {
+    position: relative;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 70px 30px 25px;
+}
+
+
+/* =========================================
+   MAIN FOOTER
+   ========================================= */
+
+.footer-main {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1.2fr
+        1.2fr;
+
+    gap: 60px;
+}
+
+
+/* =========================================
+   BRAND
+   ========================================= */
+
+.footer-logo {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.footer-logo span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.footer-brand p {
+    max-width: 280px;
+
+    margin: 0 0 25px;
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.footer-status {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 9px;
+
+    padding: 8px 12px;
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.035);
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 10px;
+    letter-spacing: .04em;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #55d98b;
+
+    box-shadow:
+        0 0 0 4px rgba(85,217,139,.1),
+        0 0 12px rgba(85,217,139,.5);
+
+    animation: footerPulse 2s infinite;
+}
+
+@keyframes footerPulse {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .45;
+    }
+}
+
+
+/* =========================================
+   FOOTER COLUMNS
+   ========================================= */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.footer-column h4 {
+    margin: 0 0 10px;
+
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column span {
+    width: fit-content;
+
+    color: rgba(255,255,255,.5);
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   CONNECT
+   ========================================= */
+
+.footer-connect > a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.footer-connect > a i {
+    font-size: 13px;
+}
+
+.footer-socials {
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 12px;
+}
+
+.footer-socials a {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+
+    color: rgba(255,255,255,.6);
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.footer-socials a:hover {
+    color: #fff;
+
+    background: rgba(255,255,255,.08);
+
+    border-color: rgba(255,255,255,.3);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   DIVIDER
+   ========================================= */
+
+.footer-divider {
+    height: 1px;
+
+    margin: 55px 0 22px;
+
+    background: rgba(255,255,255,.08);
+}
+
+
+/* =========================================
+   BOTTOM
+   ========================================= */
+
+.footer-bottom {
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: rgba(255,255,255,.4);
+
+    font-size: 10px;
+    letter-spacing: .03em;
+}
+
+.footer-bottom strong {
+    color: rgba(255,255,255,.75);
+}
+
+.footer-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-location i {
+    font-size: 10px;
+}
+
+
+/* =========================================
+   BACK TO TOP
+   ========================================= */
+
+.footer-top {
+    justify-self: end;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: rgba(255,255,255,.7);
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+.footer-top:hover {
+    background: #fff;
+    color: #0b0b0b;
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        grid-template-columns: 1fr auto;
+    }
+
+    .footer-location {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .footer-inner {
+        padding: 55px 22px 22px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-divider {
+        margin: 40px 0 20px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-bottom p {
+        max-width: 240px;
+
+        line-height: 1.6;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div id="cd"></div>
+<div id="cr"></div>
+<div id="sb"></div>
+
+<div id="loader">
+  <div class="ln">Amit Yadav</div>
+  <div class="lbw"><div class="lb"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nc">
+    <a href="#home" class="logo">Amit <span>Yadav</span></a>
+    <ul class="nl">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="mmb" id="mmbtn" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<div class="mn" id="mobnav">
+  <button class="mnc" id="mobclose" aria-label="Close menu">✕</button>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hi">
+    <div class="hero-grid">
+
+      <!-- LEFT: intro content -->
+      <div class="hero-left rev">
+        <p class="hero-label">Data Analyst · Mumbai, India</p>
+        <h1 class="hero-name">Amit Yadav</h1>
+        <p class="hero-tagline">finds beauty in logic.</p>
+        <p class="hero-desc">
+          Data Science &amp; AI graduate turning raw numbers into warm, human stories — with Python, SQL, Tableau and Power BI. Creating peace in chaos, one dataset at a time.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#projects" class="hero-btn hero-btn-primary">
+            Explore my work
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          </a>
+          <a href="mailto:amit.y21c@gmail.com" class="hero-btn hero-btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            amit.y21c@gmail.com
+          </a>
+          <a href="https://drive.google.com/file/d/1u2rH3gyLb1lbT-eZXGZ8aFNDFK5Zcbld/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5"></path></svg>
+            Resume
+          </a>
+        </div>
+
+        <div class="hero-social-row">
+          <a href="https://github.com/mr-amit-yadav" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hero-social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/amit-yadav-3408a2308" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hero-social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://www.instagram.com/amitvibes1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hero-social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"></circle></svg>
+          </a>
+          <span class="hero-social-divider"></span>
+          <span class="hero-motto">living one page at a time</span>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">9.28</span>
+            <span class="hero-stat-label">CGPA · B.Sc. DS &amp; AI</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">12+</span>
+            <span class="hero-stat-label">Projects shipped</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">6</span>
+            <span class="hero-stat-label">Tools, one craft</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: photo -->
+      <div class="hero-right rev d1">
+        <div class="hero-photo-card">
+          <img src="coffe.jpg" alt="Amit Yadav" onerror="this.style.display='none';">
+          <p class="hero-photo-caption">data, coffee &amp; quiet pages</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="swrap">
+  <section id="about" class="section">
+    <div class="rev">
+      <p class="ey">Who I Am</p>
+      <h2 class="projects-title">
+      A reader of books, <em>and of data.</em>
+    </h2>
+    </div>
+    <div class="ag">
+      <div class="aiw rev">
+        <img src="amit1.jpeg" alt="Amit Yadav" class="aimg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="aip" style="display:none;">AY</div>
+        <p class="polaroid-caption">chai in hand, query in mind</p>
+      </div>
+      <div class="ac rev d1">
+        <div class="ats">
+          <span class="at">Data Analyst</span>
+          <span class="at">AI Enthusiast</span>
+          <span class="at">Problem Solver</span>
+          <span class="at">Storyteller</span>
+        </div>
+        <p> I'm a Data Science & AI graduate from Mumbai with one simple belief: data is a tool, insight is the impact. I love the quiet moment when a messy spreadsheet finally gives up its secret.</p>
+        <p> Right now I'm an STP Consultant at EnFuse Solutions, keeping AI/ML pipelines honest — validating data on AWS S3, auditing extractions, and preparing the ground-truth datasets that models learn from. Before that, I built a KPI intelligence framework for carbon monitoring at SequestraBionix, because I care about data that helps the planet too.</p>
+        <p> Away from the keyboard I'm a chess player, a sketcher, a yoga practitioner and a Japanese learner (日本語) — usually with a book nearby and coffee within reach.</p>
+        
+        <div class="profile-info">
+    <span class="lb2">📍 <span>Mumbai, Maharashtra, India</span></span>
+    <span class="lb2">💼 <span>STP Consultant @ EnFuse Solutions</span></span>
+    <span class="lb2">♡ <span>Open to data roles with meaning — especially sustainability</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- TOOLS / SKILLS -->
+<section id="skills" class="section tools-section">
+  <div class="tools-heading rev">
+    <p class="ey">SKILLS</p>
+    <h2 class="projects-title">
+      Tools I reach for <em>with affection.</em>
+    </h2>
+  </div>
+
+  <div class="tools-grid">
+
+    <!-- Python -->
+    <div class="tool-card rev">
+      <div class="tool-card-top">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 9l-4 3 4 3"/>
+            <path d="M16 9l4 3-4 3"/>
+            <path d="M14 5l-4 14"/>
+          </svg>
+        </div>
+        <span class="tool-label">first language</span>
+      </div>
+
+      <h3>Python</h3>
+      <p>
+        Pandas, NumPy, Matplotlib, Seaborn — where every messy
+        dataset becomes a story worth telling.
+      </p>
+    </div>
+
+    <!-- Jupyter -->
+    <div class="tool-card rev d1">
+      <div class="tool-card-top">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 4h9"/>
+            <path d="M6 8h9"/>
+            <path d="M6 12h5"/>
+            <path d="M6 16h4"/>
+            <path d="M14 15l2 2 5-5"/>
+            <path d="M16 5v4"/>
+            <path d="M14 7h4"/>
+          </svg>
+        </div>
+        <span class="tool-label">thinking space</span>
+      </div>
+
+      <h3>Jupyter</h3>
+      <p>
+        Notebooks are my sketchbooks — exploration, EDA and
+        experiments, one cell at a time.
+      </p>
+    </div>
+
+    <!-- SQL -->
+    <div class="tool-card rev d2">
+      <div class="tool-card-top">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8">
+            <ellipse cx="12" cy="5" rx="7" ry="3"/>
+            <path d="M5 5v7c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/>
+            <path d="M5 12v7c0 1.7 3.1 3 7 3s7-1.3 7-3v-7"/>
+          </svg>
+        </div>
+        <span class="tool-label">the quiet power</span>
+      </div>
+
+      <h3>SQL</h3>
+      <p>
+        MySQL, PostgreSQL &amp; SQL Server — cleaning, joining and
+        querying data until it confesses.
+      </p>
+    </div>
+
+    <!-- AWS -->
+    <div class="tool-card rev d3">
+      <div class="tool-card-top">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round">
+            <path d="M7 17h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 10a3.5 3.5 0 0 0 1 7z"/>
+          </svg>
+        </div>
+        <span class="tool-label">cloud craft</span>
+      </div>
+
+      <h3>AWS</h3>
+      <p>
+        S3-powered pipelines at EnFuse — validation, metadata
+        tracking and ground-truth data for AI/ML.
+      </p>
+    </div>
+
+    <!-- Tableau -->
+    <div class="tool-card rev d4">
+      <div class="tool-card-top">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round">
+            <path d="M5 19V9"/>
+            <path d="M10 19V5"/>
+            <path d="M15 19v-7"/>
+            <path d="M20 19v-4"/>
+            <path d="M4 19h17"/>
+          </svg>
+        </div>
+        <span class="tool-label">visual poetry</span>
+      </div>
+
+      <h3>Tableau</h3>
+      <p>
+        Live dashboards on Tableau Public — student wellbeing,
+        retail sales, stories people can feel.
+      </p>
+    </div>
+
+    <!-- Power BI -->
+    <div class="tool-card rev d5">
+      <div class="tool-card-top">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round">
+            <path d="M4 19h16"/>
+            <path d="M6 16v-5"/>
+            <path d="M11 16V7"/>
+            <path d="M16 16v-9"/>
+            <path d="M20 16v-3"/>
+          </svg>
+        </div>
+        <span class="tool-label">business lens</span>
+      </div>
+
+      <h3>Power BI</h3>
+      <p>
+        DAX, Power Query and 20,000-row UPI transactions —
+        dashboards that drive real decisions.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Skill Tags -->
+  <div class="tool-tags rev">
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>Matplotlib</span>
+    <span>Seaborn</span>
+    <span>Excel</span>
+    <span>Power Query</span>
+    <span>DAX</span>
+    <span>Streamlit</span>
+    <span>MySQL</span>
+    <span>PostgreSQL</span>
+    <span>SQL Server</span>
+    <span>AWS S3</span>
+    <span>Git</span>
+    <span>GitHub</span>
+    <span>Machine Learning</span>
+    <span>NLP</span>
+    <span>Gemini API</span>
+    <span>OpenCV</span>
+    <span>Statistical Analysis</span>
+    <span>ETL</span>
+  </div>
+</section>
+
+<!-- PROJECTS — Gallery Style -->
+<!-- PROJECTS — Editorial Gallery -->
+<section id="projects" class="section projects-editorial">
+
+  <div class="projects-heading rev">
+    <p class="projects-eyebrow">SELECTED WORK</p>
+
+    <h2 class="projects-title">
+      Chapters written <em>in data.</em>
+    </h2>
+  </div>
+
+
+  <div class="projects-grid">
+
+
+    <!-- 01 STUDENT DEPRESSION -->
+    <article class="project-card rev">
+
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85"
+          alt="Data analytics dashboard"
+        >
+      </div>
+
+      <div class="project-content">
+
+        <div class="project-meta">
+          <span>TABLEAU · SQL SERVER</span>
+          <a
+            href="https://public.tableau.com/app/profile/amit.yadav1803/viz/StudentDepressionAnalysis_17819114122320/StudentCountAnalysis"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Student Depression Analysis"
+          >↗</a>
+        </div>
+
+        <h3>Student Depression Analysis</h3>
+
+        <p>
+          A live Tableau dashboard exploring how sleep, study hours,
+          academic pressure and financial stress relate to student
+          wellbeing — 500 survey records, cleaned in SQL and deployed
+          on Tableau Public.
+        </p>
+
+        <div class="project-tags">
+          <span>Tableau</span>
+          <span>SQL Server</span>
+          <span>Excel</span>
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- 02 UPI -->
+    <article class="project-card rev d1">
+
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+          alt="Financial analytics dashboard"
+        >
+      </div>
+
+      <div class="project-content">
+
+        <div class="project-meta">
+          <span>POWER BI · DAX</span>
+
+          <a
+            href="https://github.com/mr-amit-yadav/UPI-Transaction-Analytics-Dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View UPI Transaction Analytics"
+          >↗</a>
+        </div>
+
+        <h3>UPI Transaction Analytics</h3>
+
+        <p>
+          End-to-end Power BI dashboard over 20,000 UPI transactions —
+          payment behaviour, success rates, city-wise spending and
+          demographic insight for fintech teams.
+        </p>
+
+        <div class="project-tags">
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>Power Query</span>
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- 03 SUPERSTORE -->
+    <article class="project-card rev d2">
+
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+          alt="Business analytics workspace"
+        >
+      </div>
+
+      <div class="project-content">
+
+        <div class="project-meta">
+          <span>TABLEAU · RETAIL</span>
+
+          <a
+            href="https://public.tableau.com/app/profile/amit.yadav1803/viz/SuperstoreSalesTableauDashboard_17813572391830/Dashboard1"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Superstore Sales Analysis"
+          >↗</a>
+        </div>
+
+        <h3>Superstore Sales Analysis</h3>
+
+        <p>
+          Interactive Tableau story of Superstore sales — profit by
+          region, order trends, pricing tiers and the profit-to-sales
+          relationship, built for data-driven decisions.
+        </p>
+
+        <div class="project-tags">
+          <span>Tableau</span>
+          <span>Dashboards</span>
+          <span>Excel</span>
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- 04 ELECTROHUB -->
+    <article class="project-card rev d3">
+
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=1000&q=85"
+          alt="Laptop showing business dashboard"
+        >
+      </div>
+
+      <div class="project-content">
+
+        <div class="project-meta">
+          <span>POWER BI · RETAIL</span>
+
+          <a
+            href="https://github.com/mr-amit-yadav/Electrohub"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View ElectroHub Sales Analytics"
+          >↗</a>
+        </div>
+
+        <h3>ElectroHub Sales Analytics</h3>
+
+        <p>
+          Multi-category retail analytics across electronics,
+          footwear, clothing and more — revenue trends, product
+          performance, customer behaviour and geographic distribution.
+        </p>
+
+        <div class="project-tags">
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- 05 AI LEARNING ASSISTANT -->
+    <article class="project-card rev d4">
+
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1000&q=85"
+          alt="Programming code on screen"
+        >
+      </div>
+
+      <div class="project-content">
+
+        <div class="project-meta">
+          <span>AI · STREAMLIT</span>
+
+          <a
+            href="https://github.com/mr-amit-yadav/AI_Powered_Learning_Assistant"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View AI-Powered Learning Assistant"
+          >↗</a>
+        </div>
+
+        <h3>AI-Powered Learning Assistant</h3>
+
+        <p>
+          An intelligent study companion that elaborates complex
+          concepts through AI-driven explanations — built with
+          Google's Gemini API, NLP and Streamlit.
+        </p>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>Gemini API</span>
+          <span>Streamlit</span>
+          <span>NLP</span>
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- 06 ADIDAS -->
+    <article class="project-card rev d5">
+
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85"
+          alt="Business intelligence analytics"
+        >
+      </div>
+
+      <div class="project-content">
+
+        <div class="project-meta">
+          <span>STREAMLIT · BI</span>
+
+          <a
+            href="https://github.com/mr-amit-yadav/Adidas-streamlit-Dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Adidas Sales Dashboard"
+          >↗</a>
+        </div>
+
+        <h3>Adidas Sales Dashboard</h3>
+
+        <p>
+          Interactive business intelligence on Adidas sales —
+          regional performance, product popularity and sales trends,
+          served as a live Streamlit app.
+        </p>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>Streamlit</span>
+          <span>Pandas</span>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+
+
+  <!-- MORE PROJECTS -->
+  <div class="more-projects rev">
+
+    <a
+      href="https://github.com/mr-amit-yadav"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="github-symbol">♧</span>
+      More experiments on GitHub — EDA, Zomato, Red Wine, Chips &amp; QR tools
+      <span class="more-arrow">↗</span>
+    </a>
+
+  </div>
+
+</section>
+
+<!-- BEYOND THE DATA -->
+<section id="beyond" class="section beyond-section">
+
+  <div class="projects-heading rev">
+    <p class="projects-eyebrow">BEYOND THE DATA</p>
+    <h2 class="projects-title">
+      The chapters <em>between the charts.</em>
+    </h2>
+  </div>
+
+  <div class="beyond-grid">
+
+    <!-- Books - large feature card -->
+    <div class="beyond-card beyond-large rev" style="background-image:linear-gradient(180deg,rgba(23,18,15,.15) 0%,rgba(23,18,15,.85) 100%),url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=85');">
+      <span class="beyond-tag">BOOKS</span>
+      <h3>Living one page at a time</h3>
+      <p>Every dataset is a story — books taught me how to read them.</p>
+    </div>
+
+    <!-- Chess -->
+    <div class="beyond-card rev d1" style="background-image:linear-gradient(180deg,rgba(23,18,15,.1) 0%,rgba(23,18,15,.8) 100%),url('https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=800&q=85');">
+      <span class="beyond-tag">CHESS</span>
+      <h3>Thinking five moves ahead</h3>
+    </div>
+
+    <!-- Japanese - solid color card -->
+    <div class="beyond-card beyond-solid rev d2">
+      <span class="beyond-jp">日本語</span>
+      <span class="beyond-solid-label">LEARNING JAPANESE</span>
+    </div>
+
+    <!-- Yoga -->
+    <div class="beyond-card rev d3" style="background-image:linear-gradient(180deg,rgba(23,18,15,.1) 0%,rgba(23,18,15,.8) 100%),url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=85');">
+      <span class="beyond-tag">YOGA</span>
+      <h3>Peace in chaos</h3>
+    </div>
+
+    <!-- Sketches -->
+    <div class="beyond-card rev d4" style="background-image:linear-gradient(180deg,rgba(23,18,15,.1) 0%,rgba(23,18,15,.8) 100%),url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85');">
+      <span class="beyond-tag">SKETCHES</span>
+      <h3>Lines before dashboards</h3>
+    </div>
+
+    <!-- Quote card -->
+    <div class="beyond-quote rev d5">
+      <p>"Don't just aspire to make a living, aspire to make a difference."</p>
+      <span>— a note pinned above my desk</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-editorial">
+
+  <div class="contact-heading rev">
+    <p class="contact-eyebrow">SAY HELLO</p>
+
+    <h2 class="contact-title">
+      Let's write the <em>next chapter.</em>
+    </h2>
+  </div>
+
+
+  <div class="contact-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-intro rev">
+
+      <p class="contact-description">
+        Hiring for a data role, building something interesting, or
+        just want to talk books, chess and dashboards? My inbox is
+        always open — and the coffee is warm.
+      </p>
+
+
+      <div class="contact-links">
+
+        <!-- EMAIL -->
+        <a
+          href="mailto:amit.y21c@gmail.com"
+          class="contact-link"
+        >
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="m3 7 9 6 9-6"/>
+            </svg>
+          </span>
+
+          <span>amit.y21c@gmail.com</span>
+        </a>
+
+
+        <!-- LOCATION -->
+        <div class="contact-link">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+          </span>
+
+          <span>Mumbai, Maharashtra, India</span>
+        </div>
+
+
+        <!-- RESUME -->
+        <a
+          href="https://drive.google.com/file/d/1u2rH3gyLb1lbT-eZXGZ8aFNDFK5Zcbld/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-link"
+        >
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M6 3h9l4 4v14H6z"/>
+              <path d="M14 3v5h5"/>
+              <path d="M9 13h6"/>
+              <path d="M9 17h5"/>
+            </svg>
+          </span>
+
+          <span>Download my resume (PDF)</span>
+        </a>
+
+      </div>
+
+
+      <!-- SOCIAL LINKS -->
+      <div class="social-links">
+
+        <a
+          href="https://github.com/mr-amit-yadav"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+        >
+          <svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3"/>
+            <path d="M15 22v-3.9a3.4 3.4 0 0 0-.9-2.6
+                     c3.1-.3 6.4-1.5 6.4-7
+                     a5.4 5.4 0 0 0-1.4-3.8
+                     A5 5 0 0 0 19 1
+                     s-1.2-.4-4 1.5
+                     a13.4 13.4 0 0 0-7 0
+                     C5.2.6 4 1 4 1
+                     a5 5 0 0 0-.1 3.7
+                     A5.4 5.4 0 0 0 2.5 8.5
+                     c0 5.4 3.3 6.6 6.4 7
+                     A3.4 3.4 0 0 0 8 18.1V22"/>
+          </svg>
+          GitHub
+        </a>
+
+
+        <a
+          href="https://www.linkedin.com/in/amit-yadav-3408a2308/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+        >
+          <svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7
+                     a2 2 0 0 0-4 0v7h-4v-7
+                     a6 6 0 0 1 6-6Z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+
+
+        <a
+          href="https://www.instagram.com/amitvibes1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+        >
+          <svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r=".7"
+              fill="currentColor"/>
+          </svg>
+          Instagram
+        </a>
+
+
+        <a
+          href="https://www.kaggle.com/amitvibes"
+          class="social-link"
+        >
+          <svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 19V5"/>
+            <path d="M4 19h16"/>
+            <path d="M7 15v-4"/>
+            <path d="M11 15V7"/>
+            <path d="M15 15v-6"/>
+            <path d="M19 15v-9"/>
+          </svg>
+          Kaggle
+        </a>
+
+
+        <a
+          href="https://public.tableau.com/app/profile/amit.yadav1803/vizzes"
+          class="social-link"
+        >
+          <svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 19V5"/>
+            <path d="M4 19h16"/>
+            <path d="M8 15v-4"/>
+            <path d="M12 15V8"/>
+            <path d="M16 15v-6"/>
+          </svg>
+          Tableau Public
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE — CONTACT FORM -->
+    <div class="contact-form-card rev d1">
+
+      <form
+        class="contact-form"
+        id="contact-form"
+        novalidate
+      >
+
+        <!-- NAME -->
+        <div class="contact-field">
+
+          <label for="cf-name">
+            Your name
+          </label>
+
+          <input
+            type="text"
+            id="cf-name"
+            placeholder="What should I call you?"
+            autocomplete="name"
+          >
+
+          <span
+            class="contact-error"
+            id="name-err"
+          >
+            Please enter your name.
+          </span>
+
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="contact-field">
+
+          <label for="cf-email">
+            Your email
+          </label>
+
+          <input
+            type="email"
+            id="cf-email"
+            placeholder="you@example.com"
+            autocomplete="email"
+          >
+
+          <span
+            class="contact-error"
+            id="email-err"
+          >
+            Please enter a valid email.
+          </span>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+        <div class="contact-field">
+
+          <label for="cf-message">
+            Message
+          </label>
+
+          <textarea
+            id="cf-message"
+            placeholder="Tell me about your data, your idea, or your favourite book..."
+          ></textarea>
+
+          <span
+            class="contact-error"
+            id="message-err"
+          >
+            Please enter your message.
+          </span>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+        <button
+          type="submit"
+          class="contact-submit"
+        >
+          <span>Send message</span>
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+
+
+        <div
+          class="contact-success"
+          id="fok"
+        >
+          Thanks for reaching out! I'll get back to you soon.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-glow"></div>
+
+    <div class="footer-inner">
+
+        <!-- Main footer -->
+        <div class="footer-main">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo">
+                    Amit Yadav
+                </a>
+
+                <p>
+                    Finding beauty in logic,<br>
+                    and Creating peace in chaos.
+                </p>
+
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    <span>Living one page at a time.</span>
+                </div>
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h4>Explore</h4>
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+
+            <!-- Expertise -->
+            <div class="footer-column">
+                <h4>Expertise</h4>
+
+                <span>Data Science</span>
+                <span>Artificial Intelligence</span>
+                <span>Python</span>
+                <span>SQL & Analytics</span>
+                <span>Data Visualization</span>
+            </div>
+
+
+            <!-- Connect -->
+            <div class="footer-column footer-connect">
+                <h4>Let's Connect</h4>
+
+                <a href="mailto:amit.v21c@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    amit.v21c@gmail.com
+                </a>
+
+                <div class="footer-socials">
+
+                    <a href="https://www.linkedin.com/in/amit-yadav-3408a2308/" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+
+                    <a href="https://github.com/mr-amit-yadav" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/amitvibes1/" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"></circle></svg>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+
+        <!-- Bottom footer -->
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="fyear"></span>
+                <strong>Amit Yadav</strong>.
+                Crafted with curiosity &amp; code.
+            </p>
+
+            <p class="footer-location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Mumbai, India
+            </p>
+
+        </div>
+
+    </div>
+</footer>
+
+<button id="bt" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Custom cursor ── */
+  const cd = document.getElementById('cd');
+  const cr = document.getElementById('cr');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cd.style.left=mx+'px'; cd.style.top=my+'px'; });
+  (function animCursor(){
+    rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
+    cr.style.left=rx+'px'; cr.style.top=ry+'px';
+    requestAnimationFrame(animCursor);
+  })();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ cr.style.width='48px'; cr.style.height='48px'; cr.style.opacity='.8'; });
+    el.addEventListener('mouseleave',()=>{ cr.style.width='32px'; cr.style.height='32px'; cr.style.opacity='.5'; });
+  });
+
+  /* ── Loader ── */
+  const loader = document.getElementById('loader');
+  window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('out'),500));
+
+  /* ── Scroll progress bar ── */
+  const sb = document.getElementById('sb');
+  window.addEventListener('scroll',()=>{
+    const pct=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+    sb.style.width=pct+'%';
+  },{passive:true});
+
+  /* ── Navbar active link ── */
+  const nav=document.getElementById('navbar');
+  const sections=document.querySelectorAll('section[id]');
+  const navLinks=document.querySelectorAll('.nl a');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled',window.scrollY>50);
+    let cur='';
+    sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-120) cur=s.id; });
+    navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));
+  },{passive:true});
+
+  /* ── Footer year ── */
+  document.getElementById('fyear').textContent=new Date().getFullYear();
+
+  /* ── Mobile nav ── */
+  const mmbtn=document.getElementById('mmbtn');
+  const mobnav=document.getElementById('mobnav');
+  const mobclose=document.getElementById('mobclose');
+  mmbtn.addEventListener('click',()=>{ mobnav.classList.add('open'); document.body.style.overflow='hidden'; });
+  mobclose.addEventListener('click',()=>{ mobnav.classList.remove('open'); document.body.style.overflow=''; });
+  mobnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ mobnav.classList.remove('open'); document.body.style.overflow=''; }));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ mobnav.classList.remove('open'); document.body.style.overflow=''; }});
+
+  /* ── Back to top ── */
+  const bt=document.getElementById('bt');
+  window.addEventListener('scroll',()=>bt.classList.toggle('show',window.scrollY>400),{passive:true});
+  bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',function(e){
+      const t=document.querySelector(this.getAttribute('href'));
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  });
+
+  /* ── Reveal on scroll ── */
+  const revObs=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('up'); revObs.unobserve(en.target); }});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rev').forEach(el=>revObs.observe(el));
+
+  /* ── Project filters ── */
+  const pfBtns=document.querySelectorAll('.pfb');
+  const pcWraps=document.querySelectorAll('.pc-wrap');
+  pfBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      pfBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      pcWraps.forEach(c=>{
+        const show=f==='all'||c.dataset.category===f;
+        c.classList.toggle('hidden',!show);
+      });
+    });
+  });
+
+  /* ── Contact form ── */
+  const form=document.getElementById('contact-form');
+  function vf(id,errId,fn){
+    const el=document.getElementById(id),err=document.getElementById(errId);
+    const ok=fn(el.value.trim());
+    el.classList.toggle('err',!ok);
+    err.style.display=ok?'none':'block';
+    return ok;
+  }
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const n=vf('cf-name','name-err',v=>v.length>=2);
+    const em=vf('cf-email','email-err',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    const s=vf('cf-subject','subject-err',v=>v.length>=3);
+    const m=vf('cf-message','message-err',v=>v.length>=10);
+    if(n&&em&&s&&m){
+      form.reset();
+      const ok=document.getElementById('fok');
+      ok.style.display='block';
+      setTimeout(()=>ok.style.display='none',5000);
+    }
+  });
+  form.querySelectorAll('input,textarea').forEach(el=>{
+    el.addEventListener('input',()=>el.classList.remove('err'));
+  });
+
+})();
+</script>
+</body>
+</html>
