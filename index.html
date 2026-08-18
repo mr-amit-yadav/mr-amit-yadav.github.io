@@ -1843,6 +1843,7 @@
   <button class="mnc" id="mobclose" aria-label="Close menu">✕</button>
   <a href="#home">Home</a>
   <a href="#about">About</a>
+  <a href="#experience">Experience</a>
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
@@ -2673,6 +2674,9 @@
         novalidate
       >
 
+        <input type="hidden" name="access_key" value="fd294e09-8f63-47ab-a1cd-b8115beea606">
+        <input type="checkbox" name="botcheck" style="display:none">
+
         <!-- NAME -->
         <div class="contact-field">
 
@@ -2683,6 +2687,7 @@
           <input
             type="text"
             id="cf-name"
+            name="name"
             placeholder="What should I call you?"
             autocomplete="name"
           >
@@ -2707,6 +2712,7 @@
           <input
             type="email"
             id="cf-email"
+            name="email"
             placeholder="you@example.com"
             autocomplete="email"
           >
@@ -2730,6 +2736,7 @@
 
           <textarea
             id="cf-message"
+            name="message"
             placeholder="Tell me about your data, your idea, or your favourite book..."
           ></textarea>
 
@@ -2981,17 +2988,38 @@
     err.style.display=ok?'none':'block';
     return ok;
   }
-  form.addEventListener('submit',e=>{
+  form.addEventListener('submit',async e=>{
     e.preventDefault();
     const n=vf('cf-name','name-err',v=>v.length>=2);
     const em=vf('cf-email','email-err',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-    const s=vf('cf-subject','subject-err',v=>v.length>=3);
     const m=vf('cf-message','message-err',v=>v.length>=10);
-    if(n&&em&&s&&m){
-      form.reset();
-      const ok=document.getElementById('fok');
-      ok.style.display='block';
-      setTimeout(()=>ok.style.display='none',5000);
+    if(!(n&&em&&m)) return;
+
+    const submitBtn=form.querySelector('.contact-submit');
+    submitBtn.disabled=true;
+    const originalHTML=submitBtn.innerHTML;
+    submitBtn.innerHTML='<span>Sending…</span>';
+
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Content-Type':'application/json',Accept:'application/json'},
+        body:JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const data=await res.json();
+      if(data.success){
+        form.reset();
+        const ok=document.getElementById('fok');
+        ok.style.display='block';
+        setTimeout(()=>ok.style.display='none',5000);
+      }else{
+        alert('Something went wrong sending your message. Please try emailing me directly at amit.y21c@gmail.com.');
+      }
+    }catch(err){
+      alert('Something went wrong sending your message. Please try emailing me directly at amit.y21c@gmail.com.');
+    }finally{
+      submitBtn.disabled=false;
+      submitBtn.innerHTML=originalHTML;
     }
   });
   form.querySelectorAll('input,textarea').forEach(el=>{
