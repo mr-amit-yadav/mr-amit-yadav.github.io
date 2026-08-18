@@ -59,7 +59,12 @@
     .nl a:hover{color:var(--text);}
     .nl a:hover::after,.nl a.active::after{width:100%;}
     .nl a.active{color:var(--accent);}
-    .mmb{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;}
+    .mmb{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;}
+
+    @media(max-width:768px){
+      .nl{display:none;}
+      .mmb{display:block;}
+    }
 
     .mn{display:none;position:fixed;inset:0;background:rgba(246,239,225,.97);backdrop-filter:blur(20px);z-index:9990;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
     .mn.open{display:flex;}
