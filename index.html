@@ -27,7 +27,51 @@
       --accent:#e87532;--accent2:#c65328;--accent3:#a9762a;
       --glow:0 0 40px rgba(232,117,50,.15);
       --r:16px;--r-lg:24px;
+      color-scheme:light;
     }
+    html[data-theme="dark"]{
+      --ink:#15130f;--surface:#1c1a15;--card:#211e18;
+      --border:#332f27;--border-hi:rgba(232,140,80,.35);
+      --text:#f2ebdc;--muted:#a99a87;
+      --accent:#f0873f;--accent2:#e2703a;--accent3:#c9924a;
+      --glow:0 0 40px rgba(240,135,63,.18);
+      color-scheme:dark;
+    }
+    html[data-theme="dark"] .hero::before{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);}
+    html[data-theme="dark"] .hn{background:linear-gradient(135deg,#f2ebdc 40%,rgba(242,235,220,.65) 100%);-webkit-background-clip:text;background-clip:text;}
+    html[data-theme="dark"] nav.scrolled{background:rgba(21,19,15,.9);}
+    html[data-theme="dark"] .mn{background:rgba(21,19,15,.97);}
+    html[data-theme="dark"] .aip{background:linear-gradient(135deg,#3a2e22,#4a3826);}
+
+    /* dark-mode: swap light-backdrop translucent overlays for surfaces that actually sit on a dark page */
+    html[data-theme="dark"] .hero-stat,
+    html[data-theme="dark"] .contact-icon,
+    html[data-theme="dark"] .social-link,
+    html[data-theme="dark"] .contact-form-card,
+    html[data-theme="dark"] .beyond-solid,
+    html[data-theme="dark"] .project-tags span,
+    html[data-theme="dark"] .more-projects a,
+    html[data-theme="dark"] .tool-card,
+    html[data-theme="dark"] .tool-tags span,
+    html[data-theme="dark"] .contact-success{
+      background:var(--card);
+    }
+    html[data-theme="dark"] .tool-card:hover{
+      background:var(--surface);
+    }
+    html[data-theme="dark"] .contact-field input,
+    html[data-theme="dark"] .contact-field textarea{
+      background:var(--surface);
+      color:var(--text);
+    }
+    html[data-theme="dark"] .contact-field input:focus,
+    html[data-theme="dark"] .contact-field textarea:focus{
+      background:var(--card);
+    }
+    html[data-theme="dark"] .pc-corner-icon{
+      background:rgba(255,255,255,.9);
+    }
+    html,body{transition:background-color .35s ease,color .35s ease;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{font-family:Arial,Helvetica,sans-serif;background:var(--ink);color:var(--text);line-height:1.7;overflow-x:hidden;}
@@ -61,6 +105,18 @@
     .nl a.active{color:var(--accent);}
     .mmb{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;}
 
+    .theme-toggle{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--muted);cursor:pointer;transition:all .25s ease;margin-left:1.5rem;}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .theme-toggle svg{width:17px;height:17px;}
+    .theme-toggle .icon-moon{display:none;}
+    html[data-theme="dark"] .theme-toggle .icon-sun{display:none;}
+    html[data-theme="dark"] .theme-toggle .icon-moon{display:block;}
+    .mn-theme-toggle{display:flex;align-items:center;gap:.6rem;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--muted);cursor:pointer;padding:.6rem 1.1rem;font-family:Georgia,'Times New Roman',serif;font-size:1rem;}
+    .mn-theme-toggle svg{width:16px;height:16px;}
+    .mn-theme-toggle .icon-moon{display:none;}
+    html[data-theme="dark"] .mn-theme-toggle .icon-sun{display:none;}
+    html[data-theme="dark"] .mn-theme-toggle .icon-moon{display:block;}
+
     @media(max-width:768px){
       .nl{display:none;}
       .mmb{display:block;}
@@ -93,7 +149,7 @@
     .ai img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 
     .hg{font-size:.85rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;opacity:.8;}
-    .hn{font-family:Georgia,'Times New Roman',serif;font-size:clamp(3.5rem,8vw,6.5rem);font-weight:900;font-style:normal;line-height:1;letter-spacing:-1px;margin-bottom:1.25rem;background:linear-gradient(135deg,#17120f 40%,rgba(23,18,15,.65) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hn{font-family:Georgia,'Times New Roman',serif;font-size:clamp(3.5rem,8vw,6.5rem);font-weight:900;font-style:normal;line-height:1;letter-spacing:-1px;margin-bottom:1.25rem;background:linear-gradient(135deg,var(--text) 40%,color-mix(in srgb,var(--text) 65%,transparent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .hr-role{font-size:clamp(1rem,2.5vw,1.35rem);color:var(--muted);margin-bottom:1.5rem;}
     .hr-role .twa{color:var(--accent);font-weight:600;}
     .hb{font-size:clamp(.95rem,2vw,1.05rem);color:var(--muted);line-height:1.8;max-width:640px;margin:0 auto 2.5rem;}
@@ -168,7 +224,7 @@
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
     .ag{display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:start;max-width:1100px;margin:3rem auto 0;}
-    .aiw{position:relative;background:var(--card);padding:1rem 1rem 3.25rem;border-radius:6px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.16);transform:rotate(-3deg);transition:transform .3s ease;}
+    .aiw{position:relative;background:var(--card);padding:1rem 1rem 3.25rem;border-radius:6px;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,.16);transform:rotate(-6deg);transition:transform .3s ease;}
     .aiw:hover{transform:rotate(0deg);}
     .aimg{width:100%;aspect-ratio:3/4;border-radius:2px;object-fit:cover;display:block;}
     .aip{width:100%;aspect-ratio:3/4;border-radius:2px;background:linear-gradient(135deg,#e8dcc8,#d8c8ae);display:flex;align-items:center;justify-content:center;font-family:Georgia,'Times New Roman',serif;font-size:5rem;color:var(--accent);opacity:.6;}
@@ -315,7 +371,7 @@
     letter-spacing: 4px;
     text-transform: uppercase;
 
-    color: #e87532;
+    color: var(--accent);
 }
 
 .contact-title {
@@ -330,11 +386,11 @@
     font-weight: 500;
     line-height: 1.05;
 
-    color: #17120f;
+    color: var(--text);
 }
 
 .contact-title em {
-    color: #e87532;
+    color: var(--accent);
     font-weight: 400;
 }
 
@@ -377,7 +433,7 @@
     font-size: 14px;
     line-height: 1.65;
 
-    color: #795f51;
+    color: var(--muted);
 }
 
 
@@ -402,7 +458,7 @@
 
     width: fit-content;
 
-    color: #352b25;
+    color: var(--text);
 
     text-decoration: none;
 
@@ -417,7 +473,7 @@
 }
 
 .contact-link:hover {
-    color: #e87532;
+    color: var(--accent);
 }
 
 
@@ -435,10 +491,10 @@
 
     flex-shrink: 0;
 
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 4px;
 
-    color: #e87532;
+    color: var(--accent);
 
     background: rgba(255,255,255,0.18);
 }
@@ -470,12 +526,12 @@
 
     padding: 6px 10px;
 
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 4px;
 
     background: rgba(255,255,255,0.15);
 
-    color: #594b42;
+    color: var(--muted);
 
     text-decoration: none;
 
@@ -494,9 +550,9 @@
 }
 
 .social-link:hover {
-    color: #e87532;
+    color: var(--accent);
 
-    border-color: #e87532;
+    border-color: var(--accent);
 
     background: #f5eee3;
 }
@@ -509,7 +565,7 @@
 .contact-form-card {
     padding: 27px 21px 21px;
 
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 6px;
 
     background: rgba(255,255,255,0.18);
@@ -544,7 +600,7 @@
 
     font-size: 10px;
 
-    color: #493c34;
+    color: var(--text);
 }
 
 
@@ -558,12 +614,12 @@
 
     box-sizing: border-box;
 
-    border: 1px solid #d8cdbb;
+    border: 1px solid var(--border);
     border-radius: 5px;
 
-    background: #f1eadd;
+    background: var(--card);
 
-    color: #352b25;
+    color: var(--text);
 
     font-family:
         Arial,
@@ -596,14 +652,14 @@
 
 .contact-field input::placeholder,
 .contact-field textarea::placeholder {
-    color: #9a8c7e;
+    color: var(--muted);
 }
 
 .contact-field input:focus,
 .contact-field textarea:focus {
-    border-color: #e87532;
+    border-color: var(--accent);
 
-    background: #f7f1e7;
+    background: var(--card);
 
     box-shadow:
         0 0 0 2px rgba(232,117,50,0.08);
@@ -691,12 +747,12 @@
 
     padding: 10px 12px;
 
-    border: 1px solid #d7c9b5;
+    border: 1px solid var(--border);
     border-radius: 4px;
 
-    background: #f3ecdf;
+    background: var(--card);
 
-    color: #665348;
+    color: var(--muted);
 
     font-family: Arial, Helvetica, sans-serif;
 
@@ -777,7 +833,7 @@
     letter-spacing: 4px;
     text-transform: uppercase;
 
-    color: #e87532;
+    color: var(--accent);
 }
 
 .projects-title {
@@ -788,11 +844,11 @@
     font-weight: 500;
     line-height: 1.05;
 
-    color: #17120f;
+    color: var(--text);
 }
 
 .projects-title em {
-    color: #e87532;
+    color: var(--accent);
     font-weight: 400;
 }
 
@@ -955,10 +1011,10 @@
 .project-card {
     overflow: hidden;
 
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 7px;
 
-    background: #f2ecdf;
+    background: var(--card);
 
     transition:
         transform 0.3s ease,
@@ -969,7 +1025,7 @@
 .project-card:hover {
     transform: translateY(-5px);
 
-    border-color: #cfc2ad;
+    border-color: var(--border-hi);
 
     box-shadow:
         0 15px 35px rgba(45, 30, 20, 0.09);
@@ -986,7 +1042,7 @@
 
     overflow: hidden;
 
-    background: #ddd3c2;
+    background: var(--surface);
 }
 
 .project-image img {
@@ -1034,11 +1090,11 @@
     font-size: 9px;
     letter-spacing: 1.5px;
 
-    color: #e87532;
+    color: var(--accent);
 }
 
 .project-meta a {
-    color: #75675c;
+    color: var(--muted);
 
     text-decoration: none;
 
@@ -1050,7 +1106,7 @@
 }
 
 .project-meta a:hover {
-    color: #e87532;
+    color: var(--accent);
     transform: translate(2px, -2px);
 }
 
@@ -1072,7 +1128,7 @@
 
     font-weight: 600;
 
-    color: #17120f;
+    color: var(--text);
 }
 
 
@@ -1093,7 +1149,7 @@
     font-size: 12px;
     line-height: 1.55;
 
-    color: #795f51;
+    color: var(--muted);
 }
 
 
@@ -1113,7 +1169,7 @@
 .project-tags span {
     padding: 4px 7px;
 
-    border: 1px solid #d8cdbb;
+    border: 1px solid var(--border);
     border-radius: 3px;
 
     background: rgba(255,255,255,0.22);
@@ -1122,7 +1178,7 @@
 
     font-size: 9px;
 
-    color: #705b4d;
+    color: var(--muted);
 }
 
 
@@ -1144,7 +1200,7 @@
 
     padding: 10px 18px;
 
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 5px;
 
     background: rgba(255,255,255,0.18);
@@ -1153,7 +1209,7 @@
 
     font-size: 11px;
 
-    color: #352b25;
+    color: var(--text);
 
     text-decoration: none;
 
@@ -1164,11 +1220,11 @@
 }
 
 .more-projects a:hover {
-    border-color: #e87532;
+    border-color: var(--accent);
 
     background: #f4ede2;
 
-    color: #e87532;
+    color: var(--accent);
 }
 
 .github-symbol {
@@ -1243,7 +1299,7 @@
 .tool-card {
     min-height: 275px;
     padding: 28px;
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.18);
 
@@ -1259,9 +1315,27 @@
 
 .tool-card:hover {
     transform: translateY(-6px);
-    border-color: #e87532;
+    border-color: var(--accent);
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 14px 35px rgba(60, 40, 20, 0.08);
+}
+
+/* whisper — a personal aside revealed on hover */
+.tool-whisper {
+    margin-top: 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    transition: max-height .35s ease, opacity .3s ease, margin-top .35s ease;
+}
+.tool-card:hover .tool-whisper {
+    max-height: 40px;
+    opacity: 1;
+    margin-top: 10px;
 }
 
 
@@ -1285,11 +1359,11 @@
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 6px;
 
-    color: #e87532;
-    background: #f2ecdf;
+    color: var(--accent);
+    background: var(--card);
 }
 
 .tool-icon svg {
@@ -1305,7 +1379,7 @@
 
     font-family: monospace;
     font-size: 12px;
-    color: #493c34;
+    color: var(--text);
 
     text-transform: lowercase;
 }
@@ -1320,7 +1394,7 @@
     font-size: 27px;
     font-weight: 600;
 
-    color: #17120f;
+    color: var(--text);
 }
 
 
@@ -1335,7 +1409,7 @@
     font-size: 14px;
     line-height: 1.65;
 
-    color: #795f51;
+    color: var(--muted);
 }
 
 
@@ -1352,7 +1426,7 @@
 .tool-tags span {
     padding: 7px 12px;
 
-    border: 1px solid #ded5c5;
+    border: 1px solid var(--border);
     border-radius: 6px;
 
     background: rgba(255, 255, 255, 0.2);
@@ -1360,7 +1434,7 @@
     font-family: monospace;
     font-size: 12px;
 
-    color: #654e42;
+    color: var(--muted);
 
     transition:
         color 0.2s ease,
@@ -1369,8 +1443,8 @@
 }
 
 .tool-tags span:hover {
-    color: #e87532;
-    border-color: #e87532;
+    color: var(--accent);
+    border-color: var(--accent);
     background: #f5eee3;
 }
 
@@ -1835,6 +1909,10 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle day/night theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+    </button>
     <button class="mmb" id="mmbtn" aria-label="Open menu">☰</button>
   </div>
 </nav>
@@ -1846,6 +1924,11 @@
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
+  <button class="mn-theme-toggle" id="mnThemeToggle">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+    <span class="theme-label">Switch to night</span>
+  </button>
 </div>
 
 <!-- HERO -->
@@ -1985,6 +2068,7 @@
         Pandas, NumPy, Matplotlib, Seaborn — where every messy
         dataset becomes a story worth telling.
       </p>
+      <p class="tool-whisper">— My mother tongue in data</p>
     </div>
 
     <!-- Jupyter -->
@@ -2010,6 +2094,7 @@
         Notebooks are my sketchbooks — exploration, EDA and
         experiments, one cell at a time.
       </p>
+      <p class="tool-whisper">— Where curiosity lives</p>
     </div>
 
     <!-- SQL -->
@@ -2031,6 +2116,7 @@
         MySQL, PostgreSQL &amp; SQL Server — cleaning, joining and
         querying data until it confesses.
       </p>
+      <p class="tool-whisper">— Beauty in logic, literally</p>
     </div>
 
     <!-- AWS -->
@@ -2050,6 +2136,7 @@
         S3-powered pipelines at EnFuse — validation, metadata
         tracking and ground-truth data for AI/ML.
       </p>
+      <p class="tool-whisper">— Trust, built pipeline by pipeline</p>
     </div>
 
     <!-- Tableau -->
@@ -2073,6 +2160,7 @@
         Live dashboards on Tableau Public — student wellbeing,
         retail sales, stories people can feel.
       </p>
+      <p class="tool-whisper">— Charts that speak before I do</p>
     </div>
 
     <!-- Power BI -->
@@ -2096,6 +2184,7 @@
         DAX, Power Query and 20,000-row UPI transactions —
         dashboards that drive real decisions.
       </p>
+      <p class="tool-whisper">— Numbers that mean business</p>
     </div>
 
   </div>
@@ -2913,6 +3002,31 @@
   /* ── Loader ── */
   const loader = document.getElementById('loader');
   window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('out'),500));
+
+  /* ── Day / night theme ── */
+  const root=document.documentElement;
+  const themeBtn=document.getElementById('themeToggle');
+  const mnThemeBtn=document.getElementById('mnThemeToggle');
+  const mnThemeLabel=mnThemeBtn?mnThemeBtn.querySelector('.theme-label'):null;
+
+  function applyTheme(theme){
+    root.setAttribute('data-theme',theme);
+    if(mnThemeLabel) mnThemeLabel.textContent = theme==='dark' ? 'Switch to day' : 'Switch to night';
+  }
+  function currentTheme(){
+    const saved=localStorage.getItem('theme');
+    if(saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  applyTheme(currentTheme());
+
+  function toggleTheme(){
+    const next = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('theme',next);
+  }
+  if(themeBtn) themeBtn.addEventListener('click',toggleTheme);
+  if(mnThemeBtn) mnThemeBtn.addEventListener('click',toggleTheme);
 
   /* ── Scroll progress bar ── */
   const sb = document.getElementById('sb');
