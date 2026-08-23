@@ -117,36 +117,6 @@
     html[data-theme="dark"] .mn-theme-toggle .icon-sun{display:none;}
     html[data-theme="dark"] .mn-theme-toggle .icon-moon{display:block;}
 
-    /* music toggle */
-    .music-box{position:fixed;left:24px;bottom:24px;z-index:999;}
-    .music-pill{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.15);transition:all .3s ease;position:relative;z-index:2;}
-    .music-toggle{width:42px;height:42px;flex-shrink:0;border-radius:50%;border:none;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .25s ease;}
-    .music-toggle:hover{transform:scale(1.06);}
-    .music-toggle svg{width:18px;height:18px;}
-    .music-toggle .icon-pause{display:none;}
-    .music-box.playing .music-toggle .icon-play{display:none;}
-    .music-box.playing .music-toggle .icon-pause{display:block;}
-    .vinyl{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle,var(--card) 0 4px,#2a2420 4px 6px,#17120f 6px 100%);flex-shrink:0;margin-right:2px;animation:vinylspin 3s linear infinite;animation-play-state:paused;cursor:pointer;}
-    .music-box.playing .vinyl{animation-play-state:running;}
-    .music-label{max-width:0;overflow:hidden;white-space:nowrap;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:.82rem;color:var(--muted);transition:max-width .35s ease,padding .35s ease;}
-    .music-box.playing .music-label{max-width:220px;padding-right:12px;}
-    @keyframes vinylspin{to{transform:rotate(360deg)}}
-
-    /* mood picker popup */
-    .mood-picker{position:absolute;left:0;bottom:calc(100% + 12px);width:220px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:0 20px 45px rgba(0,0,0,.22);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:1;}
-    .mood-picker.open{opacity:1;visibility:visible;transform:translateY(0);}
-    .mood-picker-title{font-family:monospace;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
-    .mood-option{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;border-radius:8px;padding:.6rem .7rem;margin-bottom:4px;cursor:pointer;text-align:left;transition:background .2s ease;}
-    .mood-option:last-child{margin-bottom:0;}
-    .mood-option:hover{background:var(--surface);}
-    .mood-option.active{background:var(--accent);}
-    .mood-name{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:.92rem;color:var(--text);}
-    .mood-option.active .mood-name{color:#fff;}
-    .mood-desc{font-family:monospace;font-size:.7rem;color:var(--muted);}
-    .mood-option.active .mood-desc{color:rgba(255,255,255,.85);}
-
-    @media(max-width:600px){.music-box{left:16px;bottom:16px;}.music-label{display:none;}}
-
     @media(max-width:768px){
       .nl{display:none;}
       .mmb{display:block;}
@@ -3006,48 +2976,6 @@
     </div>
 </footer>
 
-<!-- Music box -->
-<div class="music-box" id="musicBox">
-  <div class="mood-picker" id="moodPicker">
-    <p class="mood-picker-title">Choose your atmosphere</p>
-
-  <button class="mood-option" data-src="KiminoNawa.mp3" data-label="nostalgia">
-  <span class="mood-name">KiminoNawa</span>
-  <span class="mood-desc">nostalgia</span>
-</button>
-
-<button class="mood-option" data-src="Suzume.mp3" data-label="journey">
-  <span class="mood-name">Suzume</span>
-  <span class="mood-desc">journey</span>
-</button>
-
-<button class="mood-option" data-src="Nandemonaiya.mp3" data-label="wander">
-  <span class="mood-name">Nandemonaiya</span>
-  <span class="mood-desc">wander</span>
-</button>
-  </div>
-
-  <audio id="bgAudio" loop preload="none"></audio>
-
-  <div class="music-pill">
-    <button class="music-toggle" id="musicToggle" aria-label="Choose a mood">
-      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
-        <polygon points="6 3 20 12 6 21 6 3"/>
-      </svg>
-      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
-        <rect x="6" y="4" width="4" height="16"/>
-        <rect x="14" y="4" width="4" height="16"/>
-      </svg>
-    </button>
-
-    <div class="vinyl" id="vinylIcon" title="Change atmosphere"></div>
-
-    <span class="music-label" id="musicLabel">
-      A little music, from my world to yours.
-    </span>
-  </div>
-</div>
-
 <button id="bt" aria-label="Back to top">
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
 </button>
@@ -3134,58 +3062,6 @@
   const bt=document.getElementById('bt');
   window.addEventListener('scroll',()=>bt.classList.toggle('show',window.scrollY>400),{passive:true});
   bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-  /* ── Music box ── */
-  const musicBox=document.getElementById('musicBox');
-  const musicToggle=document.getElementById('musicToggle');
-  const bgAudio=document.getElementById('bgAudio');
-  const moodPicker=document.getElementById('moodPicker');
-  const vinylIcon=document.getElementById('vinylIcon');
-  const musicLabel=document.getElementById('musicLabel');
-  const moodOptions=document.querySelectorAll('.mood-option');
-  let currentMood=null;
-
-  function closePicker(){ moodPicker.classList.remove('open'); }
-  function togglePicker(){ moodPicker.classList.toggle('open'); }
-
-  moodOptions.forEach(opt=>{
-    opt.addEventListener('click',()=>{
-      const src=opt.dataset.src, label=opt.dataset.label;
-      moodOptions.forEach(o=>o.classList.remove('active'));
-      opt.classList.add('active');
-      currentMood=label;
-      bgAudio.src=src;
-      bgAudio.play().then(()=>{
-        musicBox.classList.add('playing');
-        musicLabel.textContent=`Enjoy the ${label} — a gift`;
-        musicToggle.setAttribute('aria-label','Pause background music');
-      }).catch(()=>{
-        alert(`Add a "${src}" file next to index.html to enable this mood.`);
-      });
-      closePicker();
-    });
-  });
-
-  if(musicToggle && bgAudio){
-    musicToggle.addEventListener('click',()=>{
-      if(!currentMood){ togglePicker(); return; }
-      if(bgAudio.paused){
-        bgAudio.play();
-        musicBox.classList.add('playing');
-        musicToggle.setAttribute('aria-label','Pause background music');
-      }else{
-        bgAudio.pause();
-        musicBox.classList.remove('playing');
-        musicToggle.setAttribute('aria-label','Play background music');
-      }
-    });
-  }
-  if(vinylIcon){
-    vinylIcon.addEventListener('click',togglePicker);
-  }
-  document.addEventListener('click',e=>{
-    if(!musicBox.contains(e.target)) closePicker();
-  });
 
   /* ── Smooth scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
